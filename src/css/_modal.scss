@@ -173,7 +173,7 @@ canvas {
     padding: $spacing;
     position: fixed;
     top: 0;
-    z-index: 9999;
+    z-index: 99999;
 
     &.pop__bg--show {
       display: flex;

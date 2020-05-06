@@ -1,24 +1,31 @@
 // Modal limits JS
 
 export default class ModalLimits {
-    constructor(openModal, nameSpace, self) {
+    constructor(openBtn, nameSpace) {
         this.nameSpace = nameSpace;
-        this.openModalState = openModal;
+        this.openBtn = openBtn;
+        this.openModalState = false;
         this.html = {};
         this.init();
         this.array;
     }
 
-    init() {
+    init() {        
         const addModalEvents = () => {
             this.handleState(true);
             this.html.goError.classList.remove('pop__message--show');
             this.handleEvents();
+            console.log('Bye');
+            
             this.focusTrap(this.html.modal);
         };
 
         this.getSelectors();
         if (this.openModalState) addModalEvents();
+
+        this.html.openBtn.addEventListener('click', ()=> {
+            this.handleState(true);
+        });
     }
 
     getSelectors() {
@@ -28,11 +35,17 @@ export default class ModalLimits {
         this.html.allInputs = Array.from(document.querySelectorAll(`.${this.nameSpace}__input`));
         this.html.submit = document.getElementById(`${this.nameSpace}Submit`);
         this.html.goError = document.querySelector('.pop__message--error');
+        this.html.openBtn = document.querySelector(`.${this.openBtn}`);
+
+        console.log(this.html.openBtn);
+        console.log('this.html.closebutton', this.html.closebutton);
     }
 
     handleEvents() {
+        console.log('Hello');
         this.html.allInputs.forEach(input => this.addListenerTo(input));
         this.handleClose();
+        
         this.handleEscape();
         this.submitActions();
     }
@@ -43,6 +56,8 @@ export default class ModalLimits {
             this.handleState(false);
         };
 
+        console.log('Hello');
+        
         this.html.closebutton.addEventListener('click', closeModal);
     }
 

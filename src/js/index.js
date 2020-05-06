@@ -1,27 +1,9 @@
 // JS
+import modal from './modal';
 
-console.log('JS works!');
-class Bork {
-    //Property initializer syntax
-    instanceProperty = "bork";
-    boundFunction = () => {
-      return this.instanceProperty;
-    };
+document.addEventListener('DOMContentLoaded', ()=> {
+  const goModal = new modal('btn', 'pop');
 
-    //Static class properties
-    static staticProperty = "babelIsCool";
-    static staticFunction = function() {
-      return Bork.staticProperty;
-    };
-  }
-
-  let myBork = new Bork;
-
-  //Property initializers are not on the prototype.
-  console.log(myBork.__proto__.boundFunction); // > undefined
-
-  //Bound functions are bound to the class instance.
-  console.log(myBork.boundFunction.call(undefined)); // > "bork"
-
-  //Static function exists on the class.
-  console.log(Bork.staticFunction()); // > "babelIsCool"
+  console.log('goModal', goModal);
+  
+});

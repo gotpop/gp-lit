@@ -86,7 +86,5 @@ export default class ModalLimits {
     goSubmit = event => {
         event.preventDefault();
         new FormData(this.html.form);
-
-        console.log('this.formDataObj', this.formDataObj);
     };
 }

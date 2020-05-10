@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel serve src/html/index.njk"
+    "start": "parcel serve src/html/index.njk",
+    "build": "parcel build src/html/index.njk"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",

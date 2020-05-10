@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import button from './button';
 import myForm from './form';
 
-const myTemplate = config =>
+const popUp = config =>
     html`
     ${button(config.btn)}
     <div id="${config.nameSpace}" class="${config.nameSpace}__bg">
@@ -17,4 +17,4 @@ const myTemplate = config =>
     </div>
   `;
 
-export default myTemplate;
+export default popUp;

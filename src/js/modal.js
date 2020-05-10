@@ -72,7 +72,7 @@ export default class ModalLimits {
 
     handleEscape = event => {
         const userHitEscape = (event.key === 'Escape');
-        userHitEscape ? this.handleState(false) : this.handleState(true);
+        if (userHitEscape)  this.handleState(false);
     }
 
     goFormData = event => {

@@ -1,15 +1,11 @@
 // Import 
 import { render } from 'lit-html';
-import myTemplate from './templates/popUp';
+import popUpHTML from './templates/popUp';
 import modal from './modal';
+import config from './data/config';
 
-const config = {
-  stuff: 'Whut',
-  dog: 'lulu'
-}
-
-render(myTemplate(config), document.body);
+render(popUpHTML(config), document.body);
 
 document.addEventListener('DOMContentLoaded', ()=> {
-  const goModal = new modal('btn', 'pop');  
+  const goModal = new modal(config.btn.class, config.nameSpace);  
 });

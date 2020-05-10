@@ -3,16 +3,16 @@ import { html } from 'lit-html';
 import button from './button';
 import myForm from './form';
 
-const myTemplate = (name) =>
+const myTemplate = config =>
     html`
-    ${button(name.dog)}
-    <div id="pop" class="pop__bg">
-        <article class="pop">
-            <header class="pop__header">
-                <h4 class="pop__title">Set your loss limits</h4>
-                <button id="popClose" class="pop__button pop__button--close"><span>Close</span></button>
+    ${button(config.btn)}
+    <div id="${config.nameSpace}" class="${config.nameSpace}__bg">
+        <article class="${config.nameSpace}">
+            <header class="${config.nameSpace}__header">
+                <h4 class="${config.nameSpace}__title">Set your loss limits</h4>
+                <button id="${config.nameSpace}Close" class="${config.nameSpace}__button ${config.nameSpace}__button--close"><span>Close</span></button>
             </header>
-        ${myForm(name.stuff)}
+        ${myForm(config.nameSpace)}
         </article>
     </div>
   `;

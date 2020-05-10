@@ -1,10 +1,10 @@
 // Import 
 import { html } from 'lit-html';
 
-// Define
-const button = title =>
+// Template
+const button = btn =>
 html`
-  <button class="btn">${title}</button>
+  <button class="${btn.class}">${btn.title}</button>
 `;
 
-  export default button;
+export default button;

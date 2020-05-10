@@ -9,9 +9,6 @@ export default class FocusTrap {
 
     init() {
         this.target.addEventListener('keydown', this.focusActions);
-
-        console.log('this.target', this.target);
-        
     }
 
     theArray = () => {
@@ -25,14 +22,14 @@ export default class FocusTrap {
         return obj;
     };
 
-    focusActions = (event) => {
+    focusActions = event => {
         const isTabPressed = (event.key === 'Tab');
 
         if (!isTabPressed) {
             return;
         }
 
-        if (event.shiftKey) {
+        if (event.shiftKey) {            
             if (document.activeElement === this.theArray().firstFocusableEl) {
                 this.theArray().lastFocusableEl.focus();
                 event.preventDefault();

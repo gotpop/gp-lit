@@ -1,6 +1,8 @@
 // Import 
 import { html } from 'lit-html';
 import button from './button';
+import sectionData from '../data/sections';
+import section from './section';
 
 // Template
 const main = config =>
@@ -15,6 +17,7 @@ html`
             </section>
         </div>
     </main>
+    ${sectionData.map((item) => html`${section(item)}`)}
 `;
 
 export default main;

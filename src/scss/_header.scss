@@ -5,8 +5,7 @@
     padding: 1rem;
 
     &__inner {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        @include grid(12, 1fr, true);
         grid-template-rows: 1fr;
     }
 

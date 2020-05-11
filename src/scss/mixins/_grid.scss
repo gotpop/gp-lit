@@ -1,0 +1,9 @@
+// Grid
+
+@mixin grid($columns, $size, $hasGap, $gap: 1rem) {
+    display: grid;
+    grid-template-columns: repeat($columns, $size);
+    @if $hasGap {
+        grid-gap: $gap;
+    }
+}

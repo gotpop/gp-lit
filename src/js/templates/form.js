@@ -12,7 +12,6 @@ const myForm = nameSpace =>
                     <div class="${nameSpace}__input-wrap">
                         <input class="${nameSpace}__input ${nameSpace}__input--clean" type="number" min="1" max="2000" id="1day"
                             name="limitAmount1" required />
-                        <span class="${nameSpace}__currency-holder">CHF</span>
                         <p class="${nameSpace}__message">You must enter a number of a least one character.</p>
                     </div>
                     <span>Must be below <strong>CHF 2,000</strong></span>
@@ -22,7 +21,6 @@ const myForm = nameSpace =>
                     <div class="${nameSpace}__input-wrap">
                         <input class="${nameSpace}__input ${nameSpace}__input--clean" type="number" min="1" max="10000" id="7day"
                             name="limitAmount7" required />
-                        <span class="${nameSpace}__currency-holder">CHF</span>
                         <p class="${nameSpace}__message">You must enter a number of a least one character.</p>
                     </div>
                     <span>Must be below <strong>1 day limit</strong> and <strong>30 day limit</strong></span>
@@ -32,7 +30,6 @@ const myForm = nameSpace =>
                     <div class="${nameSpace}__input-wrap">
                         <input class="${nameSpace}__input ${nameSpace}__input--clean" type="number" min="1" max="2000" id="30day"
                             name="limitAmount30" required />
-                        <span class="${nameSpace}__currency- holder">CHF</span>
                         <p class="${nameSpace}__message">You must enter a number of a least one character.</p>
                     </div>
                     <span>Must be below <strong>7 day limit</strong> and <strong>CHF 2,000</strong></span>

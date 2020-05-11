@@ -1,28 +1,3 @@
-// Limits pop up vars
-
-$side-spacing: 1.5rem;
-$spacing: 1rem;
-$pop-grey-light: #ccc;
-$pop-grey-mid: #eee;
-$pop-white: #fff;
-$pop-alert: #da0000;
-$pop-success: #178c22;
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX($spacing);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-canvas {
-  max-width: 100%;
-}
-
 // Limits pop up
 .pop {
   background: $pop-white;
@@ -57,13 +32,6 @@ canvas {
     padding: $spacing $side-spacing;
     margin-bottom: 0;
     font-size: 13px;
-  }
-
-  &__currency-holder {
-    font-weight: 900;
-    left: 1em;
-    position: absolute;
-    top: 0.75em;
   }
 
   &__message {

@@ -1,0 +1,31 @@
+// Main
+
+.main {
+    background-color: grey;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    
+    &__inner {
+        grid-column: 1/13;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+    }
+
+    &__intro {
+        grid-column: 1/7;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        background-color: lightgray;
+        padding: 1rem;
+    }
+    
+    &__actions {
+        grid-column: 7 / 13;
+        padding: 1rem;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        background-color: white;
+    }
+}

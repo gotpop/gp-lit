@@ -1,5 +1,7 @@
 // Import 
 import { html } from 'lit-html';
+import menu from '../data/menu';
+import menuItem from './menuItem';
 
 // Template
 const header = 
@@ -10,10 +12,7 @@ html`
             <h1>Logo</h1>
         </div>
         <nav class="header__nav">
-            <a>Logo</a>
-            <a>Logo</a>
-            <a>Logo</a>
-            <a>Logo</a>
+            ${menu.map((item) => html`${menuItem(item)}`)}
         </nav>
     </section>
   </header>

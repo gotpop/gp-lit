@@ -5,3 +5,4 @@ dist
 .cache/d9/70a2b04dfe1ebd18f0328779a0736a.json
 
 .cache
+.DS_Store

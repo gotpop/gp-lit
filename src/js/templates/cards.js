@@ -7,8 +7,8 @@ import card from './card';
 const cards = 
 html`
   <section class="cards">
-    <h1>The cards</h1>
-    ${cardsData.map((item) => html`${card(item)}`)}
+    <h1>The cards.</h1>
+    ${cardsData.map((carditem) => html`${card(carditem)}`)}
   </section>
 `;
 

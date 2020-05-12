@@ -3,9 +3,9 @@ import { html } from 'lit-html';
 
 
 // Template
-const input = (item) =>
+const card = cardItem =>
 html`
-    <h1>${item.title}</h1>
+    <p>${cardItem.title}</p>
 `;
 
-export default input;
+export default card;

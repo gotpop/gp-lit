@@ -1,6 +1,6 @@
 const cards = [
-    {title: 'pop'},
-    {title: 'got'}
+    {title: 'Card 11'},
+    {title: 'Card 2'}
 ];
 
 export default cards;

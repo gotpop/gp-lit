@@ -7,8 +7,12 @@ import card from './card';
 const cards = 
 html`
   <section class="cards">
-    <h1>The cards.</h1>
-    ${cardsData.map((carditem) => html`${card(carditem)}`)}
+    <div class="cards__title">
+        <h1>The cards.</h1>
+    </div>
+    <div class="cards__main">
+        ${cardsData.map((carditem) => html`${card(carditem)}`)}
+    </div>
   </section>
 `;
 

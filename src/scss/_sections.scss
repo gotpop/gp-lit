@@ -1,0 +1,8 @@
+.section {
+    background-color: hotpink;
+    padding: 1rem;
+
+    &__inner {
+        @include grid(12, 1fr, true);
+    }
+}

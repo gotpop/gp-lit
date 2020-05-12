@@ -1,0 +1,16 @@
+// Cards
+
+.cards {
+    background-color: yellow;
+    padding: 1rem;
+
+    &__main {
+        @include grid(12, 1fr, true);
+    }
+
+    .card {
+        background-color: white;
+        padding: 1rem;
+        grid-column: span 3;
+    }
+}

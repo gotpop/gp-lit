@@ -1,11 +1,10 @@
 // Import 
 import { html } from 'lit-html';
 
-
 // Template
 const card = cardItem =>
 html`
-    <p>${cardItem.title}</p>
+    <article class="card">${cardItem.title}</article>
 `;
 
 export default card;

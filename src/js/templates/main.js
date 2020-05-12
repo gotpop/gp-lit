@@ -13,6 +13,9 @@ html`
         <div class="main__inner">
             <section class="main__intro">
                 <h1>The main</h1>
+                <svg class="icon">
+                    <use xlink:href="#code" />
+                </svg>
             </section>
             <section class="main__actions">
                 ${button(config.btn)}

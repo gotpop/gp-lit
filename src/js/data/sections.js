@@ -6,7 +6,7 @@ const sections = [{
         link: 'www.gotpop.net',
         image: {
             title: 'Image title',
-            src: '',
+            src: 'pebbles.jpg',
             width: '200',
             height: '200'
         },
@@ -20,7 +20,7 @@ const sections = [{
         link: 'www.gotpop.net',
         image: {
             title: 'Image title',
-            src: '',
+            src: './pebbles.jpg',
             width: '200',
             height: '200'
         },
@@ -34,7 +34,7 @@ const sections = [{
         link: 'www.gotpop.net',
         image: {
             title: 'Image title',
-            src: '',
+            src: './pebbles.jpg',
             width: '200',
             height: '200'
         },
@@ -48,7 +48,7 @@ const sections = [{
         link: 'www.gotpop.net',
         image: {
             title: 'Image title',
-            src: '',
+            src: './pebbles.jpg',
             width: '200',
             height: '200'
         },

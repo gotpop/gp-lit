@@ -5,6 +5,7 @@
     padding: 1rem;
     position: sticky;
     top: 0;
+    // grid-column: span 12;
 
     &__inner {
         @include grid(12, 1fr, true);

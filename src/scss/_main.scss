@@ -3,7 +3,8 @@
 .main {
     @include grid(12, 1fr, true);
     background-color: grey;
-    padding: 1rem;
+    // padding: 1rem;
+    grid-template-rows: 10fr auto;
     
     &__inner {
         grid-column: 1/13;

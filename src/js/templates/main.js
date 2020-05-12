@@ -3,6 +3,7 @@ import { html } from 'lit-html';
 import button from './button';
 import sectionData from '../data/sections';
 import section from './section';
+import cards from './cards'
 
 // Template
 const main = config =>
@@ -18,6 +19,7 @@ html`
         </div>
     </main>
     ${sectionData.map((item) => html`${section(item)}`)}
+    ${cards}
 `;
 
 export default main;

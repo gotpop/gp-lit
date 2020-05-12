@@ -10,6 +10,9 @@ html`
     <section class="header__inner">
         <div class="header__logo">
             <h1>Logo</h1>
+            <svg class="icon">
+                <use xlink:href="#code" />
+            </svg>
         </div>
         <nav class="header__nav">
             ${menu.map((item) => html`${menuItem(item)}`)}

@@ -1,19 +1,17 @@
-// Vars
+// Spacing
 $side-spacing: 1.5rem;
 $spacing: 1rem;
-$pop-grey-light: #ccc;
-$pop-grey-mid: #eee;
-$pop-white: #fff;
-$pop-alert: #da0000;
-$pop-success: #178c22;
 
-
+// Colours
 :root {
-    --side-spacing: 1.5rem;
-    --spacing: 1rem;
-    --pop-grey-light: #ccc;
-    --pop-grey-mid: #eee;
-    --pop-white: #fff;
-    --pop-alert: #da0000;
-    --pop-success: #178c22;
-  }
+  --pop-alert: #f44336;
+  --pop-success: #4caf50;
+  --primary-color-dark: #c2185b;
+  --primary-color: #e91e63;
+  --primary-color-light: #f8bbd0;
+  --primary-color-text: #ffffff;
+  --accent-color: #9e9e9e;
+  --primary-text-color: #212121;
+  --secondary-text-color:#757575;
+  --divider-color: #bdbdbd;
+}

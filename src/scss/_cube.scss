@@ -6,6 +6,11 @@ $small: $size / 2;
   height: $size;
   border: 1px solid #CCC;
   perspective: 400px;
+  z-index: 99;
+
+  &--force-redraw {
+    z-index: 999;
+  }
 }
 
 .cube {

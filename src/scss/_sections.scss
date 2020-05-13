@@ -1,5 +1,5 @@
 .section {
-    background-color: hotpink;
+    background-color: var(--primary-color);
     display: grid;
     grid-template-columns: 1fr minmax(0,1200px) 1fr;
     grid-template-rows: minmax(400px, 600px);

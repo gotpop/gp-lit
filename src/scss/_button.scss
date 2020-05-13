@@ -1,0 +1,17 @@
+// Button
+
+.button {
+    background-color: green;
+    color: white;
+    display: flex;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all .4s ease;
+
+    &:hover {
+        opacity: .8;
+    }
+}

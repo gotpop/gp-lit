@@ -1,6 +1,6 @@
 // Limits pop up
 .pop {
-  background: $pop-white;
+  background: var(--primary-color-light);
   border-radius: 5px;
   overflow: hidden;
   max-width: 400px;
@@ -12,8 +12,8 @@
     display: flex;
     justify-content: space-between;
     padding: $spacing $side-spacing;
-    background-color: $pop-grey-mid;
-    border-bottom: 1px solid $pop-grey-light;
+    background-color: var(--accent-color);
+    border-bottom: 1px solid var(--divider-color);
     align-items: center;
   }
 
@@ -36,7 +36,7 @@
 
   &__message {
     display: none;
-    color: $pop-alert;
+    color: var(--pop-alert);
 
     &.pop__message--show {
       display: inline-flex;
@@ -55,11 +55,11 @@
     }
 
     &:invalid:not(.pop__input--clean) {
-      border-bottom: 2px solid $pop-alert;
+      border-bottom: 2px solid var(--pop-alert);
     }
 
     &:valid {
-      border-bottom: 2px solid $pop-success;
+      border-bottom: 2px solid var(--pop-success);
     }
 
     &:invalid:not(.pop__input--clean) ~ .pop__message {
@@ -72,11 +72,11 @@
   }
 
   &__input-box {
-    border-bottom: 1px solid $pop-grey-light;
+    border-bottom: 1px solid var(--accent-color);
     padding: $spacing $side-spacing;
 
     &:first-of-type {
-      border-top: 1px solid $pop-grey-light;
+      border-top: 1px solid var(--accent-color);
     }
   }
 
@@ -112,7 +112,7 @@
       &::after {
         content: "";
         display: inline-flex;
-        background: $pop-alert;
+        background: var(--pop-alert);
         width: 20px;
         height: 3px;
         transform: rotate(45deg);

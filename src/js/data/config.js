@@ -1,7 +1,7 @@
 const config = {
     nameSpace: 'pop',
     btn: {
-        class: 'btn',
+        class: 'button',
         title: 'Click here'
     }
 }

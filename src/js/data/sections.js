@@ -7,8 +7,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: 'pebbles.jpg',
-            width: '200',
-            height: '200'
+            width: '1000',
+            height: '1000'
         },
         button: {
             title: 'Button title'
@@ -21,8 +21,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './pebbles.jpg',
-            width: '200',
-            height: '200'
+            width: '1000',
+            height: '1000'
         },
         button: {
             title: 'Button title'
@@ -35,8 +35,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './pebbles.jpg',
-            width: '200',
-            height: '200'
+            width: '1000',
+            height: '1000'
         },
         button: {
             title: 'Button title'
@@ -49,8 +49,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './pebbles.jpg',
-            width: '200',
-            height: '200'
+            width: '1000',
+            height: '1000'
         },
         button: {
             title: 'Button title'

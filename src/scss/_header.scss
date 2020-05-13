@@ -1,13 +1,18 @@
 // Header 
 
 .header {
-    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
-
+    z-index: 9999;
+    grid-template-columns: 1fr minmax(0,1200px) 1fr;
+    display: grid;
+    grid-template-areas: ". middle .";
+    
     &__inner {
+        backdrop-filter: blur(10px);
         @include grid(12, 1fr, true);
         grid-template-rows: 1fr;
+        grid-area: middle;
     }
 
     &__logo {

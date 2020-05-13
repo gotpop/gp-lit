@@ -4,24 +4,45 @@
     grid-template-columns: 1fr minmax(0,1200px) 1fr;
     grid-template-rows: minmax(400px, 600px);
     grid-template-areas: ". middle .";
+    transform: perspective(400px) rotateX(45deg);
+    transition: all .4s ease;
+    
+    &--visible {
+        transform: perspective(400px) rotateX(0);
+    }
 
     &__title {
         font-size: 4rem;
+        color: var(--primary-color-text);
+        margin-bottom: 1rem;
+    }
+    
+    &__text {
+        color: var(--primary-color-text);
+        margin-bottom: 1rem;
     }
     
     &__inner {
-        padding: 5rem 1rem;
         @include grid(12, 1fr, true);
         grid-area: middle;
     }
-
+    
     &__content {
+        padding: 5rem;
         grid-column: span 6;
+        position: absolute;
+        backdrop-filter: blur(10px);
+        margin: 4rem;
     }
     
     &__figure {
         object-fit: cover;
-        grid-column: span 6;
+        grid-column: span 12;
         overflow: hidden;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
     }
 }

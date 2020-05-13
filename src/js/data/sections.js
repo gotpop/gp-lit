@@ -7,9 +7,9 @@ const sections = [{
         id: "about",
         image: {
             title: 'Image title',
-            src: 'pebbles.jpg',
-            width: '600',
-            height: '600'
+            src: 'code.jpg',
+            width: '4896',
+            height: '3264'
         },
         button: {
             title: 'Button title'
@@ -22,9 +22,9 @@ const sections = [{
         id: "contact",
         image: {
             title: 'Image title',
-            src: './pebbles.jpg',
-            width: '600',
-            height: '600'
+            src: './forest.jpg',
+            width: '4896',
+            height: '3264'
         },
         button: {
             title: 'Button title'
@@ -38,8 +38,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './pebbles.jpg',
-            width: '600',
-            height: '600'
+            width: '4896',
+            height: '3264'
         },
         button: {
             title: 'Button title'
@@ -52,9 +52,9 @@ const sections = [{
         id: "work",
         image: {
             title: 'Image title',
-            src: './pebbles.jpg',
-            width: '600',
-            height: '600'
+            src: './city.jpg',
+            width: '4896',
+            height: '3264'
         },
         button: {
             title: 'Button title'
@@ -67,9 +67,9 @@ const sections = [{
         id: "news",
         image: {
             title: 'Image title',
-            src: './pebbles.jpg',
-            width: '600',
-            height: '600'
+            src: './walk.jpg',
+            width: '4896',
+            height: '3264'
         },
         button: {
             title: 'Button title'

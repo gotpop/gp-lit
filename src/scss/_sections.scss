@@ -11,7 +11,7 @@
         @include grid(12, 1fr, true);
         grid-area: middle;
         padding: 4rem;
-        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+        // filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
     }
 
     &__content {

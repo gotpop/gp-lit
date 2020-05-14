@@ -27,11 +27,11 @@ const sectionItem = (item) =>
                 />
               </figure>
             </div>
-            <div class="cube__face cube__face--back">back</div>
-            <div class="cube__face cube__face--right">right</div>
-            <div class="cube__face cube__face--left">left</div>
-            <div class="cube__face cube__face--top">top</div>
-            <div class="cube__face cube__face--bottom">bottom</div>
+            <div class="cube__face cube__face--back"></div>
+            <div class="cube__face cube__face--right"></div>
+            <div class="cube__face cube__face--left"></div>
+            <div class="cube__face cube__face--top"></div>
+            <div class="cube__face cube__face--bottom"></div>
           </div>
         </div>
       </div>

@@ -3,10 +3,10 @@
 .main {
     @include grid(12, 1fr, true);
     background-color: grey;
-    // padding: 1rem;
-    grid-template-rows: 10fr auto;
+    // grid-template-rows: 10fr ato;
     
     &__inner {
+        align-items: center;
         grid-column: 1/13;
         display: grid;
         grid-template-columns: subgrid;
@@ -14,9 +14,8 @@
     }
 
     &__intro {
-        grid-column: span 6;
+        grid-column: 3/11;
         grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
         background-color: lightgray;
         padding: 1rem;
     }

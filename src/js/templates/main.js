@@ -12,6 +12,8 @@ html`
     <main class="main">
         <div class="main__inner">
             <section class="main__intro">
+                <div class="observer__target"></div>
+                <span class="observer__state"></span>
                 <h1>The main</h1>
                 <svg class="icon">
                     <use xlink:href="#code" />

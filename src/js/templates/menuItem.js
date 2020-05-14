@@ -1,6 +1,7 @@
 // Import 
 import { html } from 'lit-html';
 
+// Event
 const clickHandler = {
     // handleEvent method is required.
     handleEvent(e) {

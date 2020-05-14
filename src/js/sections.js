@@ -4,24 +4,34 @@ export default class Sections {
     this.init();
   }
 
-  init() {
-    const images = document.querySelectorAll(".section");
+  visible() {
+    const sections = document.querySelectorAll(".section");
+    const options = {
+      rootMargin: '0px',
+      threshold: .8
+    };
 
-    const observer = new IntersectionObserver((entries) => {
+    const cb = (entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          console.log("Hello");
-
+        if (entry.intersectionRatio > 0.8) {
+        console.log('entry.intersectionRatio :', entry.intersectionRatio);
           entry.target.classList.add("section--visible");
         } else {
-          console.log("Bye");
+          console.log('REMOVE');
+          
           entry.target.classList.remove("section--visible");
         }
       });
-    });
+    };
 
-    images.forEach((image) => {
-      observer.observe(image);
+    const observer = new IntersectionObserver(cb, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
     });
+  }
+
+  init() {
+    this.visible();
   }
 }

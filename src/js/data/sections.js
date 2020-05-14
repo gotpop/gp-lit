@@ -8,8 +8,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: 'code.jpg',
-            width: '4896',
-            height: '3264'
+            width: '1000',
+            height: '667'
         },
         button: {
             title: 'Button title'
@@ -23,8 +23,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './forest.jpg',
-            width: '4896',
-            height: '3264'
+            width: '1000',
+            height: '563'
         },
         button: {
             title: 'Button title'
@@ -38,8 +38,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './pebbles.jpg',
-            width: '4896',
-            height: '3264'
+            width: '1000',
+            height: '667'
         },
         button: {
             title: 'Button title'
@@ -53,8 +53,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './city.jpg',
-            width: '4896',
-            height: '3264'
+            width: '1000',
+            height: '667'
         },
         button: {
             title: 'Button title'
@@ -68,8 +68,8 @@ const sections = [{
         image: {
             title: 'Image title',
             src: './walk.jpg',
-            width: '4896',
-            height: '3264'
+            width: '1000',
+            height: '750'
         },
         button: {
             title: 'Button title'

@@ -1,5 +1,6 @@
 .section {
     background-color: var(--primary-color);
+    background-color: lightgrey;
     display: grid;
     grid-template-columns: 1fr minmax(0,1200px) 1fr;
     grid-template-rows: minmax(400px, 600px);
@@ -7,18 +8,29 @@
     overflow: hidden;
     
     &__inner {
-        transform: perspective(400px) rotateX(-90deg) translateY(0px) translateZ(-500px);
-        transform-origin: top;
-        transition: all .4s ease;
         @include grid(12, 1fr, true);
         grid-area: middle;
+        padding: 4rem;
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
     }
 
-    &--visible {
-        .section__inner {
-            transform: perspective(400px) rotateX(0) translateY(0px) translateZ(0px);
-        }
+    &__content {
+        padding: 2rem;
+        // grid-column: span 6;
+        position: absolute;
+        // backdrop-filter: blur(1px);
+        background: rgba(0, 0, 0, 0.4);
+        margin: 2rem;
     }
+
+    // &--visible {
+    //     .section__inner {
+    //         transform: perspective(400px) rotateX(0) translateY(0px) translateZ(0px);
+    //     }
+    //     .section__content {
+    //         transform: perspective(400px) rotateY(0) translateY(0px) translateZ(0px);
+    //     }
+    // }
 
     &__title {
         font-size: 4rem;
@@ -31,14 +43,6 @@
         margin-bottom: 1rem;
     }
     
-    &__content {
-        padding: 5rem;
-        grid-column: span 6;
-        position: absolute;
-        backdrop-filter: blur(10px);
-        margin: 4rem;
-    }
-    
     &__figure {
         object-fit: cover;
         grid-column: span 12;
@@ -47,8 +51,8 @@
     }
 
     &__image {
-        max-width: 100%;
+        width: 100%;
         height: auto;
-
+        object-fit: cover;
     }
 }

@@ -7,26 +7,32 @@ export default class Sections {
   visible() {
     const sections = document.querySelectorAll(".section");
     const options = {
-      rootMargin: '0px',
-      threshold: .8
+      threshold: .5
     };
+    const cb = entries => {
+      entries.forEach(entry => {
 
-    const cb = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.8) {
-        console.log('entry.intersectionRatio :', entry.intersectionRatio);
-          entry.target.classList.add("section--visible");
-        } else {
-          console.log('REMOVE');
-          
-          entry.target.classList.remove("section--visible");
+        const sect = entry.target;
+        const cube = sect.querySelector('.cube');
+        console.log('cube :', cube);
+
+        const ratio = (entry.intersectionRatio > 0.5);
+        ratio ? entry.target.classList.add("section--visible") : entry.target.classList.remove("section--visible");
+
+        if (ratio) {
+          cube.classList.add("show-front");
+          cube.classList.remove("show-back");
+        } else {          
+          cube.classList.add("show-back");
+          cube.classList.remove("show-front");
         }
+        
       });
     };
 
     const observer = new IntersectionObserver(cb, options);
 
-    sections.forEach((section) => {
+    sections.forEach(section => {
       observer.observe(section);
     });
   }

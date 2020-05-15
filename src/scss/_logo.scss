@@ -1,0 +1,41 @@
+// Logo
+.he-logo {
+    width: 100%;
+    max-width: 180px;
+
+    &__link {
+        padding-top: 8px;
+        align-items: center;
+        color: $body-colour;
+        cursor: pointer;
+        display: flex;
+        grid-column: 2 / 6;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        
+        @media screen and (min-width: $medium-up) {
+            grid-column: 1 / 4;
+            justify-content: center;
+        }
+        
+        @media screen and (min-width: $large-up) {
+            justify-content: flex-start;
+            grid-column: 2 / 5;
+        }
+    
+        &:hover svg {
+            fill: $primary;
+        }
+    }
+
+    &__path {
+        animation-delay: 0.5s;
+        animation: logoStartUp 6s linear forwards;
+        fill-opacity: 0;
+        fill: $dark2;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke-width: 0.2px;
+    }
+}

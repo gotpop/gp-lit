@@ -20,6 +20,8 @@ const main = (config) =>
               <use xlink:href="#logo" />
             </svg>
           </a>
+
+          <p>Web development</p>
           <svg class="icon">
             <use xlink:href="#code" />
           </svg>

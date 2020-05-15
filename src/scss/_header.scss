@@ -8,6 +8,7 @@
     display: grid;
     grid-template-areas: ". middle .";
     // margin-bottom: 100px;
+    background-color: whitesmoke;
     
     &__inner {
         backdrop-filter: blur(10px);

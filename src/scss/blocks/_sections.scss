@@ -11,26 +11,14 @@
         @include grid(12, 1fr, true);
         grid-area: middle;
         padding: 4rem;
-        // filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
     }
 
     &__content {
         padding: 2rem;
-        // grid-column: span 6;
         position: absolute;
-        // backdrop-filter: blur(1px);
         background: rgba(0, 0, 0, 0.4);
         margin: 2rem;
     }
-
-    // &--visible {
-    //     .section__inner {
-    //         transform: perspective(400px) rotateX(0) translateY(0px) translateZ(0px);
-    //     }
-    //     .section__content {
-    //         transform: perspective(400px) rotateY(0) translateY(0px) translateZ(0px);
-    //     }
-    // }
 
     &__title {
         font-size: 4rem;

@@ -1,5 +1,4 @@
 // Cube
-
 export default class Cube {
   constructor() {
     this.html = {};
@@ -10,8 +9,6 @@ export default class Cube {
   init() {
     this.getHTML();
     this.html.allLinks.forEach((element) => this.linkEvents(element));
-
-
   }
 
   linkEvents(element) {

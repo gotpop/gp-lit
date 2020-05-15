@@ -7,8 +7,8 @@ export default class Sections {
   visible() {
     const sections = document.querySelectorAll(".section");
     const options = { threshold: 0.5 };
-    const cb = entries => {
-      entries.forEach(entry => {
+    const cb = (entries) => {
+      entries.forEach((entry) => {
         const sect = entry.target;
         const cube = sect.querySelector(".cube");
         const ratio = entry.intersectionRatio > 0.5;

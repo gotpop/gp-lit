@@ -1,5 +1,4 @@
 // Focus trap
-
 export default class FocusTrap {
     constructor(target, element) {
         this.element = element;

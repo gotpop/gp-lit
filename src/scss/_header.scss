@@ -10,7 +10,6 @@
     background-color: whitesmoke;
     
     &__inner {
-        backdrop-filter: blur(10px);
         @include grid(12, 1fr, true);
         grid-template-rows: 1fr;
         grid-area: middle;
@@ -22,17 +21,23 @@
         justify-content: center;
         align-items: center;
         display: none;
-
+        transition: all .5s ease;
+        
         .header__enter-logo & {
             display: flex;
         }
     } 
-
+    
     &__nav {
-        grid-column: span 10;
-        padding: 1rem;
+        grid-column: 2/12;
+        padding: 1rem 0;
         grid-template-columns: subgrid;
         display: grid;
+        transition: all .5s ease;
+        
+        .header__enter-logo & {
+            grid-column: 3/13;
+        }
 
         .menu__item {
             grid-column: span 2;

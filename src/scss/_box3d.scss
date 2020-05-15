@@ -90,22 +90,22 @@ $goValue: 14.4vw;
   }
 
   .cube__face--front {
-    background: hsla(0, 100%, 50%, 0.7);
+    background: var(--cube1);
   }
   .cube__face--right {
-    background: hsla(60, 100%, 50%, 0.7);
+    background: var(--cube2);
   }
   .cube__face--back {
-    background: hsla(120, 100%, 50%, 0.7);
+    background: var(--cube3);
   }
   .cube__face--left {
-    background: hsla(180, 100%, 50%, 0.7);
+    background: var(--cube4);
   }
   .cube__face--top {
-    background: hsla(240, 100%, 50%, 0.7);
+    background: var(--cube5);
   }
   .cube__face--bottom {
-    background: hsla(300, 100%, 50%, 0.7);
+    background: var(--cube6);
   }
 
   .cube__face--front {

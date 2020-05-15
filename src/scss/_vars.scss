@@ -1,3 +1,6 @@
+// Import
+@import './colours';
+
 // Spacing
 $side-spacing: 1.5rem;
 $spacing: 1rem;
@@ -14,9 +17,13 @@ $spacing: 1rem;
   --primary-text-color: #212121;
   --secondary-text-color:#757575;
   --divider-color: #bdbdbd;
+  --cube1: rgba(255, 255, 255,  .9);
+  --cube2: rgba(255, 255, 255,  .2);
+  --cube3: rgba(255, 255, 255,  .3);
+  --cube4: rgba(255, 255, 255,  .4);
+  --cube5: rgba(255, 255, 255,  .5);
+  --cube6: rgba(255, 255, 255,  .6);
 }
-
-@import './colours';
 
 // Applied Vars main
 $primary: #d81e1e;

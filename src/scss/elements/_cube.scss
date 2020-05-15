@@ -1,8 +1,9 @@
 $size: 100px;
 $small: $size / 2;
+$side: 130px;
+$tall: 466px;
 
 .scene {
-  // border: 3px solid red;
   perspective: 900px;
   z-index: 99;
   grid-column: span 12;
@@ -41,7 +42,6 @@ $small: $size / 2;
 .cube__face {
   position: absolute;
   width: 100%;
-  // border: 2px solid black;
   line-height: $size;
   font-size: 1em;
   font-weight: bold;
@@ -51,61 +51,32 @@ $small: $size / 2;
 }
 
 .cube__face--front {
-  background: hsla(0, 100%, 50%, 0.7);
   background-color: var(--primary-color-text);
-}
-.cube__face--right {
-  background: hsla(60, 100%, 50%, 0.7);
-  background-color: var(--primary-color-text);
-}
-.cube__face--back {
-  background: hsla(120, 100%, 50%, 0.7);
-  background-color: var(--primary-color-text);
-}
-.cube__face--left {
-  background: hsla(180, 100%, 50%, 0.7);
-  background-color: var(--primary-color-text);
-}
-.cube__face--top {
-  background: hsla(240, 100%, 50%, 0.7);
-  background-color: var(--primary-color-text);
-}
-.cube__face--bottom {
-  background: hsla(300, 100%, 50%, 0.7);
-  background-color: var(--primary-color-text);
-}
-
-// Size
-
-$side: 130px;
-$tall: 466px;
-
-.cube__face--front {
   transform: rotateY(0deg) translateZ($small);
   height: $tall;
 }
-
-.cube__face--back {
-  transform: rotateY(180deg) translateZ($small);
-  height: $tall;
-}
-
-.cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(414px);
-}
-
 .cube__face--right {
+  background-color: var(--primary-color-text);
   transform: rotateY(90deg) translateZ(1020px);
   height: 465px;
   width: 104px;
 }
-
+.cube__face--back {
+  background-color: var(--primary-color-text);
+  transform: rotateY(180deg) translateZ($small);
+  height: $tall;
+}
 .cube__face--left {
+  background-color: var(--primary-color-text);
   transform: rotateY(-90deg) translateZ(52px);
   height: 465px;
   width: 104px;
 }
-
 .cube__face--top {
+  background-color: var(--primary-color-text);
   transform: rotateX(90deg) translateZ(51px);
+}
+.cube__face--bottom {
+  background-color: var(--primary-color-text);
+  transform: rotateX(-90deg) translateZ(414px);
 }

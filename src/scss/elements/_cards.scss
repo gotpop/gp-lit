@@ -1,0 +1,19 @@
+// Cards
+
+.cards {
+    background-color: white;
+    padding: 1rem;
+
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(20px, 1fr));
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    .card {
+        background-color: white;
+        padding: 1rem;
+        grid-column: auto / span 2;
+    }
+}

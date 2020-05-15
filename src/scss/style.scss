@@ -1,21 +1,29 @@
-// Imports
+// Global vars
+@import "global/vars";
+@import "global/colours";
 
-@import "vars";
+// Global mixins
 @import "mixins/grid";
-@import "reset";
-@import "global";
-@import "layout";
-@import "animation";
-@import "header";
-@import "main";
-@import "footer";
-@import "modal";
-@import "sections";
-@import "cards";
-@import "icons";
-@import "cube";
-@import "button";
-@import "boxes";
-@import "logo";
-@import "box3d";
-@import "social";
+
+// Global
+@import "global/reset";
+@import "global/global";
+@import "global/animation";
+@import "global/layout";
+
+// Blocks
+@import "blocks/header";
+@import "blocks/main";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/sections";
+@import "blocks/social";
+
+// Elements
+@import "elements/cards";
+@import "elements/icons";
+@import "elements/cube";
+@import "elements/button";
+@import "elements/boxes";
+@import "elements/logo";
+@import "elements/box3d";

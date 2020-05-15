@@ -86,44 +86,30 @@ $goValue: 14.4vw;
     position: absolute;
     width: $goValue;
     height: $goValue;
-    // border: 2px solid black;
   }
 
   .cube__face--front {
     background: var(--cube1);
-  }
-  .cube__face--right {
-    background: var(--cube2);
-  }
-  .cube__face--back {
-    background: var(--cube3);
-  }
-  .cube__face--left {
-    background: var(--cube4);
-  }
-  .cube__face--top {
-    background: var(--cube5);
-  }
-  .cube__face--bottom {
-    background: var(--cube6);
-  }
-
-  .cube__face--front {
     transform: rotateY(0deg) translateZ($goSize);
   }
   .cube__face--right {
+    background: var(--cube2);
     transform: rotateY(90deg) translateZ($goSize);
   }
   .cube__face--back {
+    background: var(--cube3);
     transform: rotateY(180deg) translateZ($goSize);
   }
   .cube__face--left {
+    background: var(--cube4);
     transform: rotateY(-90deg) translateZ($goSize);
   }
   .cube__face--top {
+    background: var(--cube5);
     transform: rotateX(90deg) translateZ($goSize);
   }
   .cube__face--bottom {
+    background: var(--cube6);
     transform: rotateX(-90deg) translateZ($goSize);
   }
 }

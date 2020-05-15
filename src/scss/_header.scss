@@ -7,7 +7,6 @@
     grid-template-columns: 1fr minmax(0,1200px) 1fr;
     display: grid;
     grid-template-areas: ". middle .";
-    // margin-bottom: 100px;
     background-color: whitesmoke;
     
     &__inner {
@@ -22,6 +21,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        display: none;
+
+        .header__enter-logo & {
+            display: flex;
+        }
     } 
 
     &__nav {

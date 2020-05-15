@@ -6,21 +6,14 @@ import section from "./section";
 import cards from "./cards";
 import goHeader from "./header";
 import goBoxes from "./boxes";
+import goLogo from './logo';
 
 // Template
 const main = (config) =>
   html`
     <main class="main">
         <section class="main__intro">
-          <a
-            class="he-logo__link he-logo__link--active"
-            aria-current="page"
-            href="/"
-            ><svg width="301.344" height="73.189" class="he-logo" name="gotpop">
-              <use xlink:href="#logo" />
-            </svg>
-          </a>
-
+          ${goLogo}
           <p>Web development</p>
           <svg class="icon">
             <use xlink:href="#code" />

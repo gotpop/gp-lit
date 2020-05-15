@@ -2,13 +2,15 @@
 import { html } from "lit-html";
 import menu from "../data/menu";
 import menuItem from "./menuItem";
-import goLogo from './logo';
+import goLogo from "./logo";
 
 // Template
 const header = html`
   <header class="header">
     <section class="header__inner">
-      ${goLogo}
+      <div class="header__logo">
+        ${goLogo}
+      </div>
       <nav class="header__nav">
         ${menu.map((item) => html`${menuItem(item)}`)}
       </nav>
@@ -28,18 +30,18 @@ const closeToTop = () => {
       localStorage.setItem("header", initialy);
     }
   };
-  
+
   const scrollActions = () => {
     const header = document.querySelector(".header");
     const headerPosition = localStorage.getItem("header");
     const height = header.getBoundingClientRect().y;
     const pageHasScrolled = headerPosition > height;
-    
+
     pageHasScrolled
-    ? header.classList.add("header__enter-logo")
-    : header.classList.remove("header__enter-logo");
+      ? header.classList.add("header__enter-logo")
+      : header.classList.remove("header__enter-logo");
   };
-  
+
   document.addEventListener("DOMContentLoaded", loadedActions);
   window.addEventListener("scroll", scrollActions);
 };

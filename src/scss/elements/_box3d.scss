@@ -1,21 +1,21 @@
 // Boxes
-$goSize: 7.2vw;
-$goValue: 14.4vw;
+$goSize: 8vw;
+$goValue: $goSize * 2;
 
 .boxes {
     perspective: 400px;
     overflow: hidden;
-    @include grid(6, $goValue, true, 2.5vw);
-    grid-template-rows: repeat(4, $goValue);
+    @include grid(3, $goValue, true, 2.5vw);
+    // grid-template-columns: repeat(auto-fill, minmax());
+    grid-template-rows: repeat(3, $goValue);
     flex: 1 1 100%;
 
-  .scene {
-    height: $goValue;
-    grid-column: span 1;
-    grid-row: span 1;
+  &.scene {
     transform-style: preserve-3d;
     transform: translateZ(0) scale(1);
     transition: transform 1s;
+    flex: 0 1 auto;
+justify-items: center;
 
     &:nth-child(4) {
         z-index: 99999;
@@ -59,7 +59,8 @@ $goValue: 14.4vw;
     width: $goValue;
     height: $goValue;
     position: relative;
-    grid-column: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
     grid-template-columns: subgrid;
   }
 

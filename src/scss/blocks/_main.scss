@@ -7,8 +7,6 @@
   background: radial-gradient(circle, rgba(215,215,215,1) 0%, rgba(241,241,241,1) 49%, rgba(158,158,158,1) 96%, rgba(65,65,65,1) 100%);
 
   &__intro {
-    grid-column: 3/11;
-    grid-template-columns: subgrid;
     background-color: lightgray;
     padding: 1rem;
     z-index: 99999;
@@ -17,6 +15,7 @@
     flex-direction: column;
     grid-row: 2/3;
     position: absolute;
+    width: 100%;
   }
 
   &__actions {

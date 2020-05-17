@@ -4,7 +4,8 @@ $goValue: $goSize * 2;
 
 .boxes {
   perspective: 0;
-  
+  perspective: 400px;
+
   &:hover {
     perspective: 400px;
     opacity: 1;
@@ -22,7 +23,8 @@ $goValue: $goSize * 2;
     transform: translateZ(0) scale(1);
     transition: transform 1s;
     transition: all .5s ease;
-    opacity: 0.3;
+    // opacity: 0.3;
+    height: 100%;
     flex: 1 1 auto;
     justify-items: center;
 
@@ -77,7 +79,7 @@ $goValue: $goSize * 2;
 
   .cube {
     width: 100%;
-    height: $goValue; 
+    height: $goValue;
     position: relative;
     grid-column: span 2;
     grid-row: span 2;
@@ -86,6 +88,11 @@ $goValue: $goSize * 2;
 
   .cube.show-front {
     transform: translateZ(-100px) rotateY(0deg);
+    transition: all .4s ease;
+    
+    &:hover {
+      transform: translateZ(100px) rotateY(0deg);
+    }
   }
 
   .cube.show-right {
@@ -119,19 +126,22 @@ $goValue: $goSize * 2;
     transform: rotateY(0deg) translateZ($goSize);
   }
 
-  .cube__face--right {
-    background: var(--cube2);
-    transform: rotateY(90deg) translateZ($goSize);
-  }
 
   .cube__face--back {
     background: var(--cube3);
     transform: rotateY(180deg) translateZ($goSize);
   }
 
+  .cube__face--right {
+    background: var(--cube2);
+    transform: rotateY(90deg) translateZ($goSize);
+    width: 14vw;
+  }
+
   .cube__face--left {
     background: var(--cube4);
-    transform: rotateY(-90deg) translateZ($goSize);
+    transform: rotateY(-90deg) translateZ(7vw);
+    width: 14vw;
   }
 
   .cube__face--top {

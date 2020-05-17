@@ -7,7 +7,7 @@ const boxArray = [1,2,3,4,1,2,3,4,1];
 // Template
 const boxes = btn =>
 html`
-  <section class="boxes scene">
+  <section class="matrix">
     ${boxArray.map((boxItem) => html`${box(boxItem)}`)}
   </section>
 `;

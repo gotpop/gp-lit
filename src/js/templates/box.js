@@ -7,8 +7,8 @@ import goLogo from "./logo";
 const box = (btn) =>
   html`
 
-      <div class="cube show-front">
-        <div class="cube__face cube__face--front">
+      <div class="square">
+        <div class="square__face square__face--front">
           <section class="main__intro">
             ${goLogo}
             <p>Web development</p>
@@ -18,11 +18,11 @@ const box = (btn) =>
 
           </section>
         </div>
-        <div class="cube__face cube__face--back"></div>
-        <div class="cube__face cube__face--right"></div>
-        <div class="cube__face cube__face--left"></div>
-        <div class="cube__face cube__face--top"></div>
-        <div class="cube__face cube__face--bottom"></div>
+        <div class="square__face square__face--back"></div>
+        <div class="square__face square__face--right"></div>
+        <div class="square__face square__face--left"></div>
+        <div class="square__face square__face--top"></div>
+        <div class="square__face square__face--bottom"></div>
       </div>
 
   `;

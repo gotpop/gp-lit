@@ -4,79 +4,66 @@ $side: 130px;
 $tall: 466px;
 
 .scene {
-  perspective: 900px;
-  z-index: 99;
+  perspective: 1000px;
   grid-column: span 12;
 }
 
 .cube {
-  width: 1072px;
-  height: 222px;
+  width: 100%;
+  height: $tall;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-$small);
-  transition: transform 1s;
-  transform-origin: bottom;
-}
+  transition: transform .4s;
+  transform-origin: top;
 
-.cube.show-front {
-  transform: rotateX(0deg);
-}
-.cube.show-back {
-  transform: rotateX(-180deg);
-}
-
-.cube.show-right {
-  transform: translateZ(-$small) rotateY(-90deg);
-}
-.cube.show-left {
-  transform: translateZ(-$small) rotateY(90deg);
-}
-.cube.show-top {
-  transform: translateZ(-$small) rotateX(-90deg);
-}
-.cube.show-bottom {
-  transform: translateZ(-$small) rotateX(90deg);
+  &.show-front {
+    transform: rotateX(0deg);
+  }
+  
+  &.show-back {
+    transform: rotateX(-180deg);
+  }
 }
 
 .cube__face {
   position: absolute;
-  width: 100%;
-  line-height: $size;
-  font-size: 1em;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-}
+  left: 2rem;
+  top: 1rem;
+  width: calc(100% - 4rem);
 
-.cube__face--front {
-  background-color: var(--primary-color-text);
-  transform: rotateY(0deg) translateZ($small);
-  height: $tall;
-}
-.cube__face--right {
-  background-color: var(--primary-color-text);
-  transform: rotateY(90deg) translateZ(1020px);
-  height: 465px;
-  width: 104px;
-}
-.cube__face--back {
-  background-color: var(--primary-color-text);
-  transform: rotateY(180deg) translateZ($small);
-  height: $tall;
-}
-.cube__face--left {
-  background-color: var(--primary-color-text);
-  transform: rotateY(-90deg) translateZ(52px);
-  height: 465px;
-  width: 104px;
-}
-.cube__face--top {
-  background-color: var(--primary-color-text);
-  transform: rotateX(90deg) translateZ(51px);
-}
-.cube__face--bottom {
-  background-color: var(--primary-color-text);
-  transform: rotateX(-90deg) translateZ(414px);
+  &--front {
+    background-color: var(--primary-color-text);
+    transform: rotateY(0deg) translateZ($small);
+    height: $tall;
+  }
+  &--right {
+    background-color: var(--primary-color-text);
+    transform: rotateY(90deg) translateZ(1051px);
+    height: $tall;
+    width: 104px;
+  }
+  &--back {
+    background-color: var(--primary-color-text);
+    transform: rotateY(180deg) translateZ($small);
+    height: $tall;
+  }
+  &--left {
+    background-color: var(--primary-color-text);
+    transform: rotateY(-90deg) translateZ(52px);
+    height: $tall;
+    width: 104px;
+  }
+  &--top {
+    background-color: var(--primary-color-text);
+    transform: rotateX(90deg) translateZ(51px);
+    height: 104px;
+    width: 1100px;
+  }
+  &--bottom {
+    background-color: var(--primary-color-text);
+    background-color: red;;
+    transform: rotateX(-90deg) translateZ(414px);
+    height: 104px;
+    width: 1100px;
+  }
 }

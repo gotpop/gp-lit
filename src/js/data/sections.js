@@ -7,9 +7,9 @@ const sections = [{
         id: "about",
         image: {
             title: 'Image title',
-            src: 'code.jpg',
-            width: '1000',
-            height: '667'
+            src: './swim.jpg',
+            width: '1162',
+            height: '446'
         },
         button: {
             title: 'Button title'
@@ -22,7 +22,7 @@ const sections = [{
         id: "contact",
         image: {
             title: 'Image title',
-            src: './forest.jpg',
+            src: './swim.jpg',
             width: '1000',
             height: '563'
         },

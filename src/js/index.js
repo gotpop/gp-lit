@@ -11,5 +11,5 @@ render(site(config), document.body);
 document.addEventListener("DOMContentLoaded", () => {
   const goModal = new modal(config.btn.class, config.nameSpace);
   new goSections();
-  // new goMatrix();
+  new goMatrix();
 });

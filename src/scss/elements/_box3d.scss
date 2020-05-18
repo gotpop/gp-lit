@@ -1,5 +1,5 @@
 // Boxes
-$goSize: 7vw;
+$goSize: 6vw;
 $goValue: $goSize * 2;
 
 .matrix {
@@ -7,11 +7,10 @@ $goValue: $goSize * 2;
   display: grid;
   flex: 1 1 auto;
   grid-gap: 2.5vw;
-  grid-template-columns: repeat(auto-fill, $goValue);
-  grid-template-rows: repeat(3, $goValue);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   height: 100%;
   justify-items: center;
-  overflow: hidden;
   perspective: 400px;
   transform-style: preserve-3d;
   transform: translateZ(0) scale(1);
@@ -29,11 +28,6 @@ $goValue: $goSize * 2;
   transition: transform .4s;
   width: 100%;
   transform: translateZ(-$goSize);
-
-  &:hover {
-    transform: translateZ(50px) rotateY(180deg);
-    transform: rotateY(180deg);
-  }
 }
 
 .square__face {
@@ -55,7 +49,7 @@ $goValue: $goSize * 2;
 
 .square__face--right {
   background: var(--cube2);
-  transform: rotateY(90deg) translateZ($goSize);
+  transform: rotateY(90deg) translateZ(13.75vw);
   width: $goValue;
 }
 

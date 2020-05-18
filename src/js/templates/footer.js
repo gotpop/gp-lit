@@ -7,9 +7,15 @@ import goSocial from './social';
 const footer = 
 html`
   <footer class="footer">
-    ${goLogo}
-    ${goSocial}
-    <small>© Copyright GotPop 2019</small>
+    <section class="footer__inner">
+      <div class="footer__logo">
+        ${goLogo}
+      </div>
+      <nav class="footer__social social">
+        ${goSocial}
+      </nav>
+      <small class="footer__copyright">© Copyright GotPop 2019</small>
+     </section>
   </footer>
 `;
 

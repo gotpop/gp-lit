@@ -6,6 +6,14 @@
   overflow: hidden;
   background: radial-gradient(circle, rgba(215,215,215,1) 0%, rgba(241,241,241,1) 49%, rgba(158,158,158,1) 96%, rgba(65,65,65,1) 100%);
 
+  grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
+  display: grid;
+  grid-template-areas: ". main .";
+  
+  &__inner {
+      grid-area: main;
+  }
+
   &__intro {
     background-color: lightgray;
     padding: 1rem;

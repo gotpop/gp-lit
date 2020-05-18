@@ -10,7 +10,9 @@ import goBoxes from "./boxes";
 const main = (config) =>
   html`
     <main class="main">
-        ${goBoxes(config)}
+        <div class="main__inner matrix">
+          ${goBoxes(config)}
+        </div>
     </main>
     ${goHeader} ${sectionData.map((item) => html`${section(item)}`)} ${cards}
   `;

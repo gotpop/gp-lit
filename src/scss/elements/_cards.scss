@@ -1,17 +1,21 @@
 // Cards
 .cards {
     background-color: white;
-    padding: 1rem;
+    grid-template-areas: ". cards .";
+    grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
+    display: grid;
 
     &__main {
+        grid-area: cards;
+        padding: 1rem;
         display: grid;
-        grid-template-columns: repeat(12, minmax(20px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-template-rows: 1fr 1fr 1fr;
         grid-gap: 1rem;
     }
 
     .card {
-        background-color: white;
+        background-color: rgb(232, 232, 232);
         padding: 1rem;
         grid-column: auto / span 2;
     }

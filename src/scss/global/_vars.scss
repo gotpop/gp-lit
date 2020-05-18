@@ -18,11 +18,14 @@ $spacing: 1rem;
   --secondary-text-color:#757575;
   --divider-color: #bdbdbd;
   --cube1: rgba(255, 255, 255,  .9);
-  --cube2: rgba(255, 255, 255,  .2);
-  --cube3: rgba(255, 255, 255,  .3);
-  --cube4: rgba(255, 255, 255,  .4);
-  --cube5: rgba(255, 255, 255,  .5);
-  --cube6: rgba(255, 255, 255,  .6);
+  --cube2:  linear-gradient(#e66465, #9198e5);
+  --cube3:  linear-gradient(#e66465, #9198e5);
+  --cube4:  linear-gradient(#e66465, #9198e5);
+  --cube5:  linear-gradient(#e66465, #9198e5);
+  --cube6:  linear-gradient(#e66465, #9198e5);
+  --square1: 6vw;
+  --square2: 12vw;
+  --square3: -12vw;
 }
 
 // Applied Vars main

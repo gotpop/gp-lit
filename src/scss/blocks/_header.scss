@@ -10,10 +10,11 @@
     
     &__inner {
         display: grid;
-        gap: 1rem;
+        gap: 2rem;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
         grid-area: header;
+        padding: 0 1rem;
     }
 
     &__logo {

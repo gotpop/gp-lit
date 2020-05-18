@@ -1,0 +1,66 @@
+// Matrix
+.matrix {
+  align-content: center;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, var(--square2));
+  padding: 1rem;
+  perspective: 400px;
+  transform-style: preserve-3d;
+  transform: translateZ(0) scale(1);
+  transition: all 0.5s ease;
+}
+
+.square {
+  grid-column: span 2;
+  grid-row: span 1;
+  grid-template-columns: subgrid;
+  height: var(--square2);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all .4s;
+}
+
+.square__face {
+  height: var(--square2);
+  position: absolute;
+  width: 100%;
+
+  &--front {
+    background: var(--cube1);
+    transform: rotateY(0deg);
+  }
+  
+  &--back {
+    background: var(--cube3);
+    transform: rotateY(180deg) translateZ(var(--square2));
+  }
+  
+  &--right {
+    background: var(--cube2);
+    right: 0;
+    transform-origin: left;
+    transform: rotateY(90deg) translateZ(var(--square2));
+    width: var(--square2);
+  }
+  
+  &--left {
+    background: var(--cube4);
+    transform-origin: right;
+    transform: rotateY(-90deg) translateZ(var(--square2));
+    width: var(--square2);
+  }
+  
+  &--top {
+    background: var(--cube5);
+    transform-origin: top;
+    transform: rotateX(90deg) translateY(var(--square3));
+  }
+  
+  &--bottom {
+    background: var(--cube6);
+    transform-origin: bottom;
+    transform: rotateX(-90deg) translateY(var(--square2));
+  }
+}

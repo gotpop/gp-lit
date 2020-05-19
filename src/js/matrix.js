@@ -6,25 +6,32 @@ export default class Matrix {
 
   init() {
     const matrixItems = [...document.querySelectorAll(".matrix .square")];
-
-    matrixItems.forEach((item) => this.stuff(item));
+    matrixItems.forEach(item => this.hoverAnimation(item));
   }
 
-  stuff = (item) => {
-    console.log("this: ", this);
+  hoverAnimation = item => {
+    const animateIn = [
+      { transform: "rotateY(0)" }, 
+      { transform: "rotateY(180deg) translateZ(22vw)" }
+    ];
 
-    item.addEventListener("mouseenter", (e) => {
-      console.log("init", item);
+    const animateOut = [
+      { transform: "rotateY(180deg) translateZ(22vw)" },
+      { transform: "rotateY(0) translateZ(0vw)" }
+    ];
 
-      item.animate(
-        [{ transform: "rotateY(0)" }, { transform: "rotateY(180deg)" }],
-        {
-          fill: "forwards",
-          duration: 400,
-          iterations: 1,
-        }
-      );
-      console.log("getAnimations", document.getAnimations());
+    const options = {
+      fill: "forwards",
+      duration: 400,
+      iterations: 1,
+    };
+
+    item.addEventListener("mouseenter", event => {
+      item.animate(animateIn, options );
+    });
+    
+    item.addEventListener("mouseleave", event => {
+      item.animate( animateOut, options);
     });
   };
 }

@@ -31,6 +31,7 @@
     grid-row: span 2;
     height: var(--square3);
     z-index: 999;
+    // transform: rotateY(180deg) translateZ(18vh);
 
     .square__face {
       height: 100%;

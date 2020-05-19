@@ -14,7 +14,7 @@
 
   &__inner {
     grid-area: main;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem 1rem;
   }
 
   &__intro {
@@ -29,8 +29,10 @@
     width: 100%;
     height: 100%;
     align-items: center;
+    border-bottom: solid 1px rgba(238, 238, 238, 0.8);
 
     .icon {
+      margin: 1rem;
       max-width: 100px;
       max-height: 100px;;
     }

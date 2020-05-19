@@ -17,12 +17,16 @@ $spacing: 1rem;
   --primary-text-color: #212121;
   --secondary-text-color:#757575;
   --divider-color: #bdbdbd;
-  --cube1: rgba(255, 255, 255,  .4);
-  --cube2:  linear-gradient(#6f6f6f, #cdcdcd);
-  --cube3:  linear-gradient(#5d5d5d, #b4b4b4);
-  --cube4:  linear-gradient(#848484, #c6c6c6);
+  --cube1: rgba(255, 255, 255,  .35);
+  --cube2:  linear-gradient(90deg, #e1e1e1 0%, #5b5b5b 70%);
+  --cube3:  radial-gradient(
+    circle,
+    rgba(158, 158, 158, 1) 75%,
+    rgba(65, 65, 65, 1) 100%
+  );
+  --cube4:  linear-gradient(-90deg, #e1e1e1 0%, #5b5b5b 70%);
   --cube5:  linear-gradient(#747474, #d2d2d2);
-  --cube6:  linear-gradient(#787878, #e1e1e1);
+  --cube6:  linear-gradient(#e1e1e1 0%, #5b5b5b 70%);
   --square1: 6vw;
   --square2: 18vh;
   --square3: -18vh;

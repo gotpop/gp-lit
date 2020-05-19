@@ -7,37 +7,68 @@ export default class Cards {
     }
   
     init() {
-      this.visible();
+      this.observe();
+      this.html.allCards.forEach(item => this.hoverAnimation(item));
     }
     
-    visible() {
-       const allCards = [...document.querySelectorAll(".cards__main .card")];
+    show(item) {
+      const animateIn = [
+        { transform: "rotateY(0)" }, 
+        { transform: "rotateY(180deg) translateZ(22vw)" }
+      ];
+      
+      const options = {
+        fill: "forwards",
+        duration: 400,
+        iterations: 1,
+      };
+      
+      item.animate(animateIn, options);
+    }
+    
+    observe() {
+      this.html.allCards = [...document.querySelectorAll(".cards__main .card")];
         const options = { threshold: 0.5 };
 
-        const cb = (entries) => {
+        const cb = entries => {
           entries.forEach((entry) => {
-            const sect = entry.target;
-            const cube = sect.querySelector(".cube");
-            const ratio = entry.intersectionRatio > 0.5;
 
-            ratio
-              ? entry.target.classList.add("section--visible")
-              : entry.target.classList.remove("section--visible");
-    
-            if (ratio) {
-              entry.target.classList.add("show-front");
-              entry.target.classList.remove("show-back");
-            } else {
-              entry.target.classList.add("show-back");
-              entry.target.classList.remove("show-front");
-            }
+            const ratio = (entry.intersectionRatio > 0.5);
+
+            if (ratio) this.show(entry.target);
           });
         };
     
         const observer = new IntersectionObserver(cb, options);
     
-        allCards.forEach((card) => {
+        this.html.allCards.forEach((card) => {
           observer.observe(card);
         });
       }
+
+      hoverAnimation = item => {
+        const animateIn = [
+          { transform: "rotateY(0)" }, 
+          { transform: "rotateY(180deg) translateZ(22vw)" }
+        ];
+    
+        const animateOut = [
+          { transform: "rotateY(180deg) translateZ(22vw)" },
+          { transform: "rotateY(0) translateZ(0vw)" }
+        ];
+    
+        const options = {
+          fill: "forwards",
+          duration: 400,
+          iterations: 1,
+        };
+    
+        item.addEventListener("mouseenter", event => {
+          item.animate(animateIn, options );
+        });
+        
+        item.addEventListener("mouseleave", event => {
+          item.animate( animateOut, options);
+        });
+      };
   }

@@ -5,7 +5,6 @@
   grid-gap: 2rem;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, var(--square2));
-  padding: 1rem;
   perspective: 400px;
   transform-style: preserve-3d;
   transform: translateZ(0) scale(1);
@@ -31,7 +30,7 @@
       height: 100%;
 
       &--top {
-        transform: rotateX(90deg) translateY(var(--square2));
+        transform: rotateX(90deg) translateY(-24vw);
       }
 
       &--bottom {

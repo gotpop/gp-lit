@@ -1,21 +1,19 @@
 // Import
 import { html } from "lit-html";
-import goLogo from "./logo";
+import goIntro from "./matrixIntroContent";
+
+// Logic
+function getUserMessage(boxItem) {
+  const center = boxItem.id === 9;
+  if (center) return `square--center`;
+}
 
 // Template
-const box = (boxItem) =>
+const box = boxItem =>
   html`
-    <div class="square">
+    <div class="square ${getUserMessage(boxItem)}">
       <div class="square__face square__face--front">
-        ${boxItem.id === 9
-          ? html` <section class="main__intro">
-              ${goLogo}
-              <p>Web development</p>
-              <svg class="icon">
-                <use xlink:href="#code" />
-              </svg>
-            </section>`
-          : html``}
+        ${boxItem.id === 9 ? html`${goIntro}` : html``}
       </div>
       <div class="square__face square__face--back"></div>
       <div class="square__face square__face--right"></div>

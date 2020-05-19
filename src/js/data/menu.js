@@ -19,11 +19,6 @@ const menu = [{
         title: 'Work',
         link: '#work',
         value: 'left',
-    },
-    {
-        title: 'News',
-        link: '#news',
-        value: 'top',
     }
 
 ];

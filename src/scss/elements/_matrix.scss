@@ -9,6 +9,12 @@
   transform-style: preserve-3d;
   transform: translateZ(0) scale(1);
   transition: all 0.5s ease;
+  perspective-origin: 50% 134%;
+  
+  &:hover {
+    
+    perspective-origin: 50% 50%;
+  }
 }
 
 .square {

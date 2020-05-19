@@ -7,6 +7,22 @@ export default class Matrix {
   init() {
     const matrixItems = [...document.querySelectorAll(".matrix .square")];
     matrixItems.forEach(item => this.hoverAnimation(item));
+    // matrixItems.forEach(item => this.start(item));
+  }
+
+  start = (item) => {
+    const animateIn = [
+      { opacity: "0" }, 
+      { opacity: "1" }
+    ];
+
+    const options = {
+      fill: "forwards",
+      duration: 400,
+      iterations: 1,
+    };
+
+    item.animate(animateIn, options );
   }
 
   hoverAnimation = item => {

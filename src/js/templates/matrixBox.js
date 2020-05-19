@@ -15,7 +15,7 @@ const box = (boxItem) =>
                 <use xlink:href="#code" />
               </svg>
             </section>`
-          : html`Please log in`}
+          : html``}
       </div>
       <div class="square__face square__face--back"></div>
       <div class="square__face square__face--right"></div>

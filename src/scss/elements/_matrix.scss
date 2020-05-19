@@ -23,18 +23,18 @@
   &:nth-child(9) {
     grid-column: span 2;
     grid-row: span 2;
-    background-color: red !important;
     height: var(--square3);
 
     .square__face {
       height: 100%;
+      // transform: rotateX(90deg);
 
       &--top {
         transform: rotateX(90deg) translateY(-24vw);
       }
 
       &--bottom {
-        transform: rotateX(-90deg) translateY(var(--square3));
+        transform: rotateX(-90deg) translateY(44vh);
       }
     }
   }

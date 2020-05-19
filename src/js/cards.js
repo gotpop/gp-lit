@@ -33,9 +33,9 @@ export default class Cards {
         const cb = entries => {
           entries.forEach((entry) => {
 
-            const ratio = (entry.intersectionRatio > 0.5);
+            const isVisible = (entry.intersectionRatio > 0.5);
 
-            if (ratio) this.show(entry.target);
+            if (isVisible) this.show(entry.target);
           });
         };
     

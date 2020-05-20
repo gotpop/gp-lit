@@ -11,12 +11,22 @@ export default class Cards {
       this.html.allCards.forEach(item => this.hoverAnimation(item));
     }
     
-    show(item) {
-      const animateIn = [
-        { transform: "rotateY(90deg) translateZ(22vw)" }, 
-        { transform: "rotateY(0deg) translateZ(0)" }
-      ];
-      
+    show(item, isEvenNumber) {
+      let animateIn = []
+
+      if (isEvenNumber) {
+        animateIn = [
+          { transform: "rotateY(-30deg) translateX(-22vw)" }, 
+          { transform: "rotateY(0deg) translateZ(0)" }
+        ];
+
+      } else {
+        animateIn = [
+          { transform: "rotateY(30deg) translateX(22vw)" }, 
+          { transform: "rotateY(0deg) translateZ(0)" }
+        ];
+      }
+
       const options = {
         fill: "forwards",
         duration: 400,
@@ -26,11 +36,21 @@ export default class Cards {
       item.animate(animateIn, options);
     }
 
-    hide(item) {
-      const animateIn = [
-        { transform: "rotateY(0deg) translateZ(0)" }, 
-        { transform: "rotateY(90deg) translateZ(22vw)" }
-      ];
+    hide(item, isEvenNumber) {
+      let animateIn = []
+
+      if (isEvenNumber) {
+        animateIn = [
+          { transform: "rotateY(0deg) translateZ(0)" },
+          { transform: "rotateY(-30deg) translateX(-22vw)" }
+        ];
+
+      } else {
+        animateIn = [
+          { transform: "rotateY(0deg) translateZ(0)" },
+          { transform: "rotateY(30deg) translateX(22vw)" }
+        ];
+      }
       
       const options = {
         fill: "forwards",
@@ -46,12 +66,23 @@ export default class Cards {
         const options = { threshold: 0.5 };
 
         const cb = entries => {
-          entries.forEach((entry) => {
+
+
+// const stuff = () => {
+  
+// }
+
+          entries.forEach((entry, i) => {
+
+            const isEvenNumber = ( (i & 1) == 0 );
+            isEvenNumber ? console.log('odd :', i, isEvenNumber)  : console.log('even :', i, isEvenNumber);
 
             const isVisible = (entry.intersectionRatio > 0.5);
 
-            isVisible ? this.show(entry.target) : this.hide(entry.target);
+            isVisible ? this.show(entry.target, isEvenNumber) : this.hide(entry.target, isEvenNumber);
           });
+
+
         };
     
         const observer = new IntersectionObserver(cb, options);
@@ -78,12 +109,12 @@ export default class Cards {
           iterations: 1,
         };
     
-        item.addEventListener("mouseenter", event => {
-          item.animate(animateIn, options );
-        });
+        // item.addEventListener("mouseenter", event => {
+        //   item.animate(animateIn, options );
+        // });
         
-        item.addEventListener("mouseleave", event => {
-          item.animate( animateOut, options);
-        });
+        // item.addEventListener("mouseleave", event => {
+        //   item.animate( animateOut, options);
+        // });
       };
   }

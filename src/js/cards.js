@@ -8,7 +8,7 @@ export default class Cards {
   
     init() {
       this.observe();
-      this.html.allCards.forEach(item => this.hoverAnimation(item));
+      // this.html.allCards.forEach(item => this.hoverAnimation(item));
     }
     
     show(item, isEvenNumber) {
@@ -109,12 +109,12 @@ export default class Cards {
           iterations: 1,
         };
     
-        // item.addEventListener("mouseenter", event => {
-        //   item.animate(animateIn, options );
-        // });
+        item.addEventListener("mouseenter", event => {
+          item.animate(animateIn, options );
+        });
         
-        // item.addEventListener("mouseleave", event => {
-        //   item.animate( animateOut, options);
-        // });
+        item.addEventListener("mouseleave", event => {
+          item.animate( animateOut, options);
+        });
       };
   }

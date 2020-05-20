@@ -25,12 +25,14 @@
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.4s;
+  will-change: transform; 
   
   &.square--center {
     grid-column: span 2;
     grid-row: span 2;
     height: var(--square3);
     z-index: 999;
+    will-change: transform; 
     // transform: rotateY(180deg) translateZ(18vh);
 
     .square__face {

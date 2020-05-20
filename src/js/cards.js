@@ -13,8 +13,23 @@ export default class Cards {
     
     show(item) {
       const animateIn = [
-        { transform: "rotateY(0)" }, 
-        { transform: "rotateY(180deg) translateZ(22vw)" }
+        { transform: "rotateY(90deg) translateZ(22vw)" }, 
+        { transform: "rotateY(0deg) translateZ(0)" }
+      ];
+      
+      const options = {
+        fill: "forwards",
+        duration: 400,
+        iterations: 1,
+      };
+      
+      item.animate(animateIn, options);
+    }
+
+    hide(item) {
+      const animateIn = [
+        { transform: "rotateY(0deg) translateZ(0)" }, 
+        { transform: "rotateY(90deg) translateZ(22vw)" }
       ];
       
       const options = {
@@ -35,7 +50,7 @@ export default class Cards {
 
             const isVisible = (entry.intersectionRatio > 0.5);
 
-            if (isVisible) this.show(entry.target);
+            isVisible ? this.show(entry.target) : this.hide(entry.target);
           });
         };
     

@@ -19,8 +19,7 @@
     }
 
     &__path {
-        animation-delay: 0.5s;
-        animation: logoStartUp 6s linear forwards;
+        animation: logoStartUp 6s linear 1s forwards;
         fill-opacity: 0;
         fill: $dark2;
         stroke-dasharray: 1000;

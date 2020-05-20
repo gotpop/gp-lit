@@ -12,11 +12,16 @@
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr 1fr 1fr;
         grid-gap: 2rem;
+        perspective: 1100px;
+        transform-style: preserve-3d;
+        transition: all 0.4s ease;
+        perspective-origin: 50% 50%;
     }
 
     .card {
         background-color: rgb(232, 232, 232);
         padding: 1rem;
         grid-column: span 6;
+        transform: rotateY(90deg) translateZ(22vw);
     }
 }

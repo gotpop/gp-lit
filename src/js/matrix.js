@@ -14,7 +14,7 @@ export default class Matrix {
 
   center = (item) => {
     const animateIn = [
-      { transform: "translateZ(-18vh)" },
+      { transform: "translateZ(-4vh)" },
       { transform: "translateZ(0)" },
     ];
 

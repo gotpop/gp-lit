@@ -20,6 +20,7 @@ $goRow: 566px;
   transform-style: preserve-3d;
   transition: all .8s;
   display: grid;
+  will-change: transform; 
 
   &.show-front {
     transform: rotateX(0deg);

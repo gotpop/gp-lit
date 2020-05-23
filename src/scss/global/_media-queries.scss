@@ -1,0 +1,80 @@
+@mixin phone {
+    @media screen and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin phone-and-tablet-portrait {
+    @media screen and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin not-phone-or-tablet-portrait {
+    @media screen and (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin not-phone {
+    @media screen and (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin not-tablet {
+    @media screen and (max-width: #{$tablet-width}),screen and (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin not-desktop {
+    @media screen and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-orientation-portrait {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin tablet-orientation-landscape {
+    @media screen and (min-width: 992px) and (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin phone-orientation-portrait {
+    @media screen and (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) and (orientation:portrait) {
+        @content;
+    }
+}
+
+@mixin phone-orientation-landscape {
+    @media screen and (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) and (orientation:landscape) {
+        @content;
+    }
+}
+
+/**
+    internet explorer 10+
+ */
+@mixin ie10-plus-only {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}

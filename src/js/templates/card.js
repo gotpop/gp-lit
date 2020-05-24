@@ -5,11 +5,6 @@ import { html } from "lit-html";
 const card = (cardItem) =>
   html`
     <article class="card">
-      <h3 class="card__title">${cardItem.title}</h3>
-      <p class="card__text">${cardItem.text}</p>
-      <a class="card__link" href="${cardItem.link.url}"
-        >${cardItem.link.text}</a
-      >
       <figure class="card__figure">
         <img
           class="card__img"
@@ -20,6 +15,13 @@ const card = (cardItem) =>
         />
         <figcaption class="card__caption">An elephant at sunset</figcaption>
       </figure>
+      <div class="card__content">
+        <h3 class="card__title">${cardItem.title}</h3>
+        <p class="card__text">${cardItem.text}</p>
+        <a class="card__link" href="${cardItem.link.url}"
+          >${cardItem.link.text}</a
+        >
+      </div>
     </article>
   `;
 

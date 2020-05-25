@@ -1,10 +1,11 @@
-// Global vars
-@import "global/vars";
-@import "global/colours";
+// Vars
+@import "vars/colours";
+@import "vars/vars";
+@import "vars/root-vars";
 
-// Global mixins
+// Global Mixins
 @import "mixins/grid";
-@import "mixins/_media-queries";
+@import "mixins/media-queries";
 
 // Global
 @import "global/reset";

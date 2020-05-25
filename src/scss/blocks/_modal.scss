@@ -11,7 +11,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    padding: $spacing $side-spacing;
+    padding: var(--spacing-side) var(--spacing);
     background-color: var(--accent-color);
     border-bottom: 1px solid var(--divider-color);
     align-items: center;
@@ -29,7 +29,7 @@
 
   &__text {
     color: black;
-    padding: $spacing $side-spacing;
+    padding: var(--spacing-side) var(--spacing);
     margin-bottom: 0;
     font-size: 13px;
   }
@@ -40,14 +40,14 @@
 
     &.pop__message--show {
       display: inline-flex;
-      padding: 0 $side-spacing $spacing $side-spacing;
+      padding: 0 var(--spacing-side) var(--spacing) var(--spacing-side);
       margin: 0;
       animation: forwards slideIn 1s;
     }
   }
 
   &__input[type="number"] {
-    margin-bottom: $spacing;
+    margin-bottom: var(--spacing);
     padding-left: 3rem;
 
     &:focus {
@@ -73,7 +73,7 @@
 
   &__input-box {
     border-bottom: 1px solid var(--accent-color);
-    padding: $spacing $side-spacing;
+    padding: var(--spacing) var(--spacing-side);
 
     &:first-of-type {
       border-top: 1px solid var(--accent-color);
@@ -138,7 +138,7 @@
     left: 0;
     min-height: 100vh;
     width: 100%;
-    padding: $spacing;
+    padding: var(--spacing);
     position: fixed;
     top: 0;
     z-index: 99999;
@@ -152,6 +152,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: $spacing $side-spacing;
+    padding: var(--side) var(--spacing-side);
+    
   }
 }

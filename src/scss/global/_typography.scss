@@ -1,7 +1,6 @@
 // Typography
-// Typography
 html {
-    font-family: $body-regular;
+    font-family: var(--body-regular);
     font-size: 14px;
 
     @media (min-width: $small-up) {
@@ -14,7 +13,7 @@ html {
 }
 
 body {
-    color: $body-colour;
+    color: var(--body-colour);
 }
 
 a {
@@ -22,8 +21,8 @@ a {
 }
 
 p {
-    line-height: $line-height;
-    font-family: $body-italic;
+    line-height: var(--line-height);
+    font-family:  var(--body-italic);
     font-kerning: normal;
 }
 
@@ -41,11 +40,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $header-medium;
-    line-height: $line-height;
-    color: $header-colour;
+    font-family: var(--header-medium);
+    line-height: var(--line-height);
+    color: var(--header-colour);
 }
 
 li {
-    line-height: $line-height;
+    line-height: var(--line-height);
 }

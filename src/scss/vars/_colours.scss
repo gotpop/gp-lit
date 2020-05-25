@@ -1,0 +1,51 @@
+// Basic
+$white: #ffffff;
+$black: #000000;
+
+// Light Colour Vars
+$light1: rgb(236, 236, 236);
+$light2: rgb(204, 202, 202);
+$light3: rgb(179, 179, 179);
+$light4: rgb(182, 182, 182);
+
+// light Tints
+$lighttint1: #eaecee;
+$lighttint2: #c5cace;
+$lighttint3: #9a9da0;
+$lighttint4: #616e77;
+
+// Dark Colour Vars
+$dark1: rgb(102, 102, 102);
+$dark2: rgb(63, 62, 62);
+$dark3: rgb(39, 39, 39);
+$dark4: rgb(53, 51, 51);
+
+// Dark Tints
+$darktint1: #9ca7af;
+$darktint2: #5c6a75;
+$darktint3: #373d42;
+$darktint4: #23272b;
+
+// Applied Vars main
+$primary: #d81e1e;
+$secondary: #303a3f;
+
+// Gradients Cube
+$cube1: rgba(255, 255, 255, .35);
+$cube2: linear-gradient(90deg, #e1e1e1 0%, #5b5b5b 70%);
+$cube3: radial-gradient(circle,
+    rgba(158, 158, 158, 1) 75%,
+    rgba(65, 65, 65, 1) 100%);
+$cube4: linear-gradient(-90deg, #e1e1e1 0%, #5b5b5b 70%);
+$cube5: linear-gradient(#747474, #d2d2d2);
+$cube6: linear-gradient(#e1e1e1 0%, #5b5b5b 70%);
+
+// Gradients Square
+$square-colour1: rgba(255, 255, 255, .35);
+$square-colour2: linear-gradient(90deg, #e1e1e1 0%, #5b5b5b 70%);
+$square-colour3: radial-gradient(circle,
+    rgba(158, 158, 158, 1) 75%,
+    rgba(65, 65, 65, 1) 100%);
+$square-colour4: linear-gradient(-90deg, #e1e1e1 0%, #5b5b5b 70%);
+$square-colour5: linear-gradient(#747474, #d2d2d2);
+$square-colour6: linear-gradient(#e1e1e1 0%, #5b5b5b 70%);

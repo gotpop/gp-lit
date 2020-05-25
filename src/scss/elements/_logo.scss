@@ -5,7 +5,7 @@
 
     &__link {
         align-items: center;
-        color: $body-colour;
+        color: var(--body-colour);
         cursor: pointer;
         display: flex;
         grid-column: 2 / 6;

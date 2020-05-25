@@ -2,7 +2,7 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX($spacing);
+    transform: translateX(var(--spacing-side));
   }
   to {
     opacity: 1;

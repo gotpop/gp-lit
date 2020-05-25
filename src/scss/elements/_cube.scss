@@ -38,12 +38,10 @@ $goRow: 566px;
 
   &--front {
     background: var(--cube1);
-    background: rgba(grey, .3);
   }
 
   &--right {
-    background: var(--cube1);
-    background-color: burlywood;
+    background: var(--cube2);
     transform: rotateY(90deg);
     height: $goRow;
     width: $depth;
@@ -52,15 +50,13 @@ $goRow: 566px;
   }
 
   &--back {
-    background: var(--cube1);
-    background-color: darkgray;
+    background: var(--cube3);
     transform: rotateY(180deg) translateZ(10vw);
     height: $goRow;
   }
 
   &--left {
-    background: var(--cube1);
-    background-color: yellow;
+    background: var(--cube4);
     transform: rotateY(-90deg);
     transform-origin: right;
     right: 100%;
@@ -69,8 +65,7 @@ $goRow: 566px;
   }
 
   &--top {
-    background: var(--cube1);
-    background-color: pink;
+    background: var(--cube5);
     transform: rotateX(90deg) translateY(-10vw);
     transform-origin: top;
     height: $depth;
@@ -78,8 +73,7 @@ $goRow: 566px;
   }
 
   &--bottom {
-    background: var(--cube1);
-    background-color: red;
+    background: var(--cube6);
     transform: rotateX(-90deg) translateY(0vw) translateZ($goRow);
     transform-origin: top;
     height: $depth;

@@ -11,9 +11,9 @@ const card = (cardItem) =>
           width="${cardItem.image.width}"
           height="${cardItem.image.height}"
           src="${cardItem.image.src}"
-          alt="Elephant at sunset"
+          alt="${cardItem.image.title}"
         />
-        <figcaption class="card__caption">An elephant at sunset</figcaption>
+        <figcaption class="card__caption">${cardItem.image.title}</figcaption>
       </figure>
       <div class="card__content">
         <h3 class="card__title">${cardItem.title}</h3>

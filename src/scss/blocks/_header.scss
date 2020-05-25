@@ -7,7 +7,7 @@
     display: grid;
     grid-template-areas: ". header .";
     background-color: whitesmoke;
-    
+
     &__inner {
         display: grid;
         gap: 2rem;
@@ -18,30 +18,27 @@
     }
 
     &__logo {
-        display: none;
         justify-content: center;
         align-items: center;
         opacity: 0;
         transition: all .5s ease;
-        
+        display: flex;
+        grid-column: span 2;
+        left: calc(100% - 2rem);
+
         .header__enter-logo & {
-            grid-column: span 2;
+            position: relative;
+            left: 0;
             opacity: 1;
-            display: flex;
         }
-    } 
-    
+    }
+
     &__nav {
-        grid-column: 2/12;
         padding: 1rem 0;
         grid-template-columns: subgrid;
         display: grid;
         transition: all .5s ease;
-        grid-column: 1/13;
-        
-        .header__enter-logo & {
-            grid-column: 3/13;
-        }
+        grid-column: 3/13;
 
         .menu__item {
             grid-column: span 2;
@@ -53,6 +50,12 @@
             align-items: center;
             transition: all .4s ease;
             color: white;
+            position: relative;
+            left: calc(-100% - 2rem);
+
+            .header__enter-logo & {
+                left: 0;
+            }
 
             &:hover {
                 background-color: var(--primary-color);

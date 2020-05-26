@@ -1,33 +1,31 @@
 // Vars
-@import "vars/colours";
-@import "vars/vars";
-@import "vars/root-vars";
+@use "vars";
 
 // Global Mixins
-@import "mixins/grid";
-@import "mixins/media-queries";
+@use "mixins/grid";
+@use "mixins/media-queries";
 
 // Global
-@import "global/reset";
-@import "global/global";
-@import "global/animation";
-@import "global/layout";
-@import "global/fonts";
-@import "global/typography";
+@use "global/reset";
+@use "global/global";
+@use "global/animation";
+@use "global/layout";
+@use "global/fonts";
+@use "global/typography";
 
 // Blocks
-@import "blocks/header";
-@import "blocks/main";
-@import "blocks/footer";
-@import "blocks/modal";
-@import "blocks/sections";
-@import "blocks/social";
+@use "blocks/header";
+@use "blocks/main";
+@use "blocks/footer";
+@use "blocks/modal";
+@use "blocks/sections";
+@use "blocks/social";
 
 // Elements
-@import "elements/cards";
-@import "elements/icons";
-@import "elements/cube";
-@import "elements/button";
-@import "elements/boxes";
-@import "elements/logo";
-@import "elements/matrix";
+@use "elements/cards";
+@use "elements/icons";
+@use "elements/cube";
+@use "elements/button";
+@use "elements/boxes";
+@use "elements/logo";
+@use "elements/matrix";

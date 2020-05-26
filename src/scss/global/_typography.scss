@@ -1,13 +1,15 @@
 // Typography
+@use "vars";
+
 html {
     font-family: var(--body-regular);
     font-size: 14px;
 
-    @media (min-width: $small-up) {
+    @media (min-width: vars.$small-up) {
         font-size: 2vw;
     }
 
-    @media (min-width: $medium-up) {
+    @media (min-width: vars.$medium-up) {
         font-size: 1rem;
     }
 }

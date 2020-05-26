@@ -1,5 +1,6 @@
 // Root vars
 // Custom properties set in ./vars first
+@use "colours";
 
 :root {
     // Alerts
@@ -12,19 +13,19 @@
     --primary-color-text: #ffffff;
     --accent-color: #9e9e9e;
     // Cube
-    --cube1: #{$cube1};
-    --cube2: #{$cube2};
-    --cube3: #{$cube3};
-    --cube4: #{$cube4};
-    --cube5: #{$cube5};
-    --cube6: #{$cube6};
+    --cube1: #{colours.$cube1};
+    --cube2: #{colours.$cube2};
+    --cube3: #{colours.$cube3};
+    --cube4: #{colours.$cube4};
+    --cube5: #{colours.$cube5};
+    --cube6: #{colours.$cube6};
     // Squares
-    --square-colour1: #{$square-colour1};
-    --square-colour2: #{$square-colour2};
-    --square-colour3: #{$square-colour3};
-    --square-colour4: #{$square-colour4};
-    --square-colour5: #{$square-colour5};
-    --square-colour6: #{$square-colour6};
+    --square-colour1: #{colours.$square-colour1};
+    --square-colour2: #{colours.$square-colour2};
+    --square-colour3: #{colours.$square-colour3};
+    --square-colour4: #{colours.$square-colour4};
+    --square-colour5: #{colours.$square-colour5};
+    --square-colour6: #{colours.$square-colour6};
     --square1: 6vw;
     --square2: 18vh;
     --square3: -18vh;
@@ -37,15 +38,15 @@
     --spacing: 1.5rem;
     --spacing-side: 1.5rem;
     // Shadows
-    --shadow: 5px 5px 5px #{rgba($dark4, 0.5)};
-    --shadow-inset: 0px 5px 20px inset #{rgba($black, 0.1)};
+    --shadow: 5px 5px 5px #{rgba(colours.$dark4, 0.5)};
+    --shadow-inset: 0px 5px 20px inset #{rgba(colours.$black, 0.1)};
     // Typography
     --header-medium: "Avenir LT Std 65 Medium";
     --header-light: "Avenir LT Std 35 Light";
     --body-regular: "LeituraNews-Roman2";
     --body-italic: "LeituraNews-Italic2";
-    --body-colour: #{$dark1};
-    --header-colour: #{$dark3};
+    --body-colour: #{colours.$dark1};
+    --header-colour: #{colours.$dark3};
     --line-height: 2rem;
     --divider-color: #bdbdbd;
     --font1: 1rem;
@@ -53,16 +54,16 @@
     --font3: 3rem;
     --primary-text-color: #212121;
     --secondary-text-color:#757575;
-    --link-active: #{$primary};
-    --link-hover: #{$primary};
+    --link-active: #{colours.$primary};
+    --link-hover: #{colours.$primary};
 
     // Site
     --background-dark: #c9d2d8;
     --background-light: #c9d2d8;
 
     // Layout colours 
-    --site-background: #{#{$lighttint1}};
-    --header-background: #{$lighttint1};
-    --panel-background: #{#{$lighttint1}};
-    --footer-background: #{$lighttint1};
+    --site-background: #{#{colours.$lighttint1}};
+    --header-background: #{colours.$lighttint1};
+    --panel-background: #{#{colours.$lighttint1}};
+    --footer-background: #{colours.$lighttint1};
   }

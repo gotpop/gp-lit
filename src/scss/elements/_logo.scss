@@ -1,4 +1,6 @@
 // Logo
+@use "vars";
+
 .he-logo {
     width: 100%;
     max-width: 180px;
@@ -14,14 +16,14 @@
         width: 100%;
     
         &:hover svg {
-            fill: $primary;
+            fill: vars.$primary;
         }
     }
 
     &__path {
         animation: logoStartUp 6s linear 1s forwards;
         fill-opacity: 0;
-        fill: $dark2;
+        fill: vars.$dark2;
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
         stroke-width: 0.2px;

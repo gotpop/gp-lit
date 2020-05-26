@@ -5,7 +5,7 @@
     grid-template-columns: 1fr minmax(800px, 1400px) 1fr;
     display: grid;
     grid-auto-rows: minmax(min-content, max-content);
-    
+
     &__inner {
         padding: 4rem 1rem;
         display: grid;

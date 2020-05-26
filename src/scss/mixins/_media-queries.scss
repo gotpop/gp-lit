@@ -38,7 +38,8 @@
 }
 
 @mixin not-tablet {
-    @media screen and (max-width: #{vars.$tablet-width}),screen and (min-width: #{vars.$desktop-width}) {
+    @media screen and (max-width: #{vars.$tablet-width}),
+    screen and (min-width: #{vars.$desktop-width}) {
         @content;
     }
 }
@@ -72,4 +73,3 @@
         @content;
     }
 }
-

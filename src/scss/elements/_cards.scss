@@ -17,7 +17,6 @@
         transition: all 0.4s ease;
         perspective-origin: 50% 50%;
     }
-
 }
 
 .card {
@@ -41,7 +40,7 @@
         position: relative;
         background: yellow;
         padding: 1rem;
-        
+
         .card:hover & {
             transform: translateY(-3rem);
         }
@@ -60,7 +59,7 @@
         backdrop-filter: blur(10px);
         text-align: center;
     }
-    
+
     &__title {
         color: white;
     }

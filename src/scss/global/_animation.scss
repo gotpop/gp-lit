@@ -1,34 +1,34 @@
 // Animations
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(var(--spacing-side));
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(var(--spacing-side));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes logoStartUp {
-  0% {
-      fill-opacity: 0;
-      fill: #3d3d3d;
-      stroke-dashoffset: 1000;
-  }
+    0% {
+        fill-opacity: 0;
+        fill: #3d3d3d;
+        stroke-dashoffset: 1000;
+    }
 
-  20% {
-      fill-opacity: 1;
-      stroke-opacity: 1;
-  }
+    20% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
 
-  80% {
-      stroke-opacity: 0;
-  }
+    80% {
+        stroke-opacity: 0;
+    }
 
-  100% {
-      fill-opacity: 1;
-      stroke-dashoffset: 0;
-      stroke-opacity: 0;
-  }
+    100% {
+        fill-opacity: 1;
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+    }
 }

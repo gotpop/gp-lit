@@ -1,48 +1,47 @@
 // Main
 .main {
-  overflow: hidden;
-  background: radial-gradient(
-    circle,
-    rgba(215, 215, 215, 1) 0%,
-    rgba(241, 241, 241, 1) 49%,
-    rgba(158, 158, 158, 1) 75%,
-    rgba(65, 65, 65, 1) 100%
-  );
-  grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
-  display: grid;
-  grid-template-areas: ". . ." ". main ." ". . .";
+    overflow: hidden;
+    background: radial-gradient(circle,
+            rgba(215, 215, 215, 1) 0%,
+            rgba(241, 241, 241, 1) 49%,
+            rgba(158, 158, 158, 1) 75%,
+            rgba(65, 65, 65, 1) 100%);
+    grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
+    display: grid;
+    grid-template-areas: ". . ."". main ."". . .";
 
-  &__inner {
-    grid-area: main;
-    padding: 0 1rem 2rem 1rem;
-  }
-
-  &__intro {
-    background-color: lightgray;
-    padding: 1rem;
-    z-index: 99999;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    grid-row: 2/3;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    border-bottom: solid 1px rgba(238, 238, 238, 0.8);
-
-    .icon {
-      margin: 1rem;
-      max-width: 100px;
-      max-height: 100px;;
+    &__inner {
+        grid-area: main;
+        padding: 0 1rem 2rem 1rem;
     }
-  }
 
-  &__actions {
-    grid-column: span 6;
-    padding: 1rem;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
-    background-color: white;
-  }
+    &__intro {
+        background-color: lightgray;
+        padding: 1rem;
+        z-index: 99999;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        grid-row: 2/3;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        border-bottom: solid 1px rgba(238, 238, 238, 0.8);
+
+        .icon {
+            margin: 1rem;
+            max-width: 100px;
+            max-height: 100px;
+            ;
+        }
+    }
+
+    &__actions {
+        grid-column: span 6;
+        padding: 1rem;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        background-color: white;
+    }
 }

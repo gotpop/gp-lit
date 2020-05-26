@@ -9,6 +9,4 @@ body {
     min-height: 100vh;
     grid-template-rows: calc(100vh - 5rem) 5rem repeat(7, minmax(min-content, max-content));
     overflow-x: hidden;
-    // perspective: 400px;
-    // transform-style: preserve-3d;
 }

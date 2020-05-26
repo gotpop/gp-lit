@@ -51,10 +51,10 @@ export default class ModalLimits {
         document.addEventListener( "keydown", this.handleEscape );
     }
 
-    handleClose = ( event ) => {
+    handleClose = event => {
         event.preventDefault( );
         this.handleState( false );
-    };
+    }
 
     submitButtonDisabled( ) {
         const valid = this.html.form.checkValidity( );

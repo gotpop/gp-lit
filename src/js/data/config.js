@@ -1,9 +1,9 @@
 const config = {
-    nameSpace: 'pop',
+    nameSpace: "pop",
     btn: {
-        class: 'button',
-        title: 'Click here'
+        class: "button",
+        title: "Click here"
     }
-}
+};
 
 export default config;

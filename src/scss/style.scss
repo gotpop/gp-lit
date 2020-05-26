@@ -1,7 +1,6 @@
 // Import directory modules
+// We don't need to import any of the global modules as they are only "@use"'d in the modules themselves.
 
-@use "vars";
-@use "mixins";
 @use "global";
 @use "blocks";
 @use "elements";

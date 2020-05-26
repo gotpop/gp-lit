@@ -1,3 +1,6 @@
+// Media Query mixins
+@use "vars";
+
 @mixin phone {
     @media screen and (max-width: #{$desktop-width - 1px}) {
         @content;
@@ -70,11 +73,3 @@
     }
 }
 
-/**
-    internet explorer 10+
- */
-@mixin ie10-plus-only {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        @content;
-    }
-}

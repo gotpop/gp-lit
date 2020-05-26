@@ -49,12 +49,14 @@ export default class Cards {
     }
 
     show( item, isEvenNumber ) {
-        isEvenNumber ? item.animate( this.css.animateInEven, this.options )
+        isEvenNumber
+            ? item.animate( this.css.animateInEven, this.options )
             : item.animate( this.css.animateInOdd, this.options );
     }
 
     hide( item, isEvenNumber ) {
-        isEvenNumber ? item.animate( this.css.animateOutEven, this.options )
+        isEvenNumber
+            ? item.animate( this.css.animateOutEven, this.options )
             : item.animate( this.css.animateOutOdd, this.options );
     }
 
@@ -68,8 +70,9 @@ export default class Cards {
                 const isEvenNumber = ( ( i & 1 ) == 0 );
                 const isVisible = ( entry.intersectionRatio > 0.5 );
 
-                isVisible ? this.show( entry.target, isEvenNumber ) : this.hide( entry.target,
-                    isEvenNumber );
+                isVisible
+                    ? this.show( entry.target, isEvenNumber )
+                    : this.hide( entry.target, isEvenNumber );
             } );
         };
 

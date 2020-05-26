@@ -1,5 +1,4 @@
 // Section data
-
 const sections = [ {
         title: "About us",
         text: "Some text content goes here",

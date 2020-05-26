@@ -1,11 +1,11 @@
 // Import 
-import { html } from 'lit-html';
-import goLogo from './logo';
-import goSocial from './social';
+import { html } from "lit-html";
+import goLogo from "./logo";
+import goSocial from "./social";
 
 // Template
-const footer = 
-html`
+const footer =
+    html `
   <footer class="footer">
     <section class="footer__inner">
       <div class="footer__logo">

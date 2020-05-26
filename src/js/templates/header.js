@@ -5,7 +5,7 @@ import menuItem from "./menuItem";
 import goLogo from "./logo";
 
 // Template
-const header = html`
+const header = html `
   <header class="header">
     <section class="header__inner">
       <div class="header__logo">
@@ -21,29 +21,29 @@ const header = html`
 export default header;
 
 // Scripts
-const closeToTop = () => {
-  const loadedActions = () => {
-    const header = document.querySelector(".header");
-    const initialy = header.getBoundingClientRect().y;
+const closeToTop = ( ) => {
+    const loadedActions = ( ) => {
+        const header = document.querySelector( ".header" );
+        const initialy = header.getBoundingClientRect( ).y;
 
-    if (localStorage.getItem("header") === null) {
-      localStorage.setItem("header", initialy);
-    }
-  };
+        if( localStorage.getItem( "header" ) === null ) {
+            localStorage.setItem( "header", initialy );
+        }
+    };
 
-  const scrollActions = () => {
-    const header = document.querySelector(".header");
-    const headerPosition = localStorage.getItem("header");
-    const height = header.getBoundingClientRect().y;
-    const pageHasScrolled = headerPosition > height;
+    const scrollActions = ( ) => {
+        const header = document.querySelector( ".header" );
+        const headerPosition = localStorage.getItem( "header" );
+        const height = header.getBoundingClientRect( ).y;
+        const pageHasScrolled = headerPosition > height;
 
-    pageHasScrolled
-      ? header.classList.add("header__enter-logo")
-      : header.classList.remove("header__enter-logo");
-  };
+        pageHasScrolled
+            ? header.classList.add( "header__enter-logo" )
+            : header.classList.remove( "header__enter-logo" );
+    };
 
-  document.addEventListener("DOMContentLoaded", loadedActions);
-  window.addEventListener("scroll", scrollActions);
+    document.addEventListener( "DOMContentLoaded", loadedActions );
+    window.addEventListener( "scroll", scrollActions );
 };
 
-closeToTop();
+closeToTop( );

@@ -1,9 +1,9 @@
 // Import 
-import { html } from 'lit-html';
+import { html } from "lit-html";
 
 // Template
 const button = btn =>
-html`
+    html `
   <button class="${btn.class}">${btn.title}</button>
 `;
 

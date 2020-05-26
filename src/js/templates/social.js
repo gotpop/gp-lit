@@ -1,7 +1,7 @@
 // Import lit-html functions
 import { html } from "lit-html";
 
-const social = html`
+const social = html `
       <a class="social__link" href="http://codepen.io/gotpop/"
         ><span class="social__icon"
           ><svg width="50" height="50" name="codepen">

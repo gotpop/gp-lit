@@ -1,9 +1,9 @@
 // Import 
-import { html } from 'lit-html';
+import { html } from "lit-html";
 
 // Template
-const input = (item, nameSpace) =>
-html`
+const input = ( item, nameSpace ) =>
+    html `
     <div class="${nameSpace}__input-box">
         <label for="1day">${item} day loss limit</label>
         <div class="${nameSpace}__input-wrap">

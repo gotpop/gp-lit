@@ -1,9 +1,9 @@
 // Import lit-html functions
-import { html } from 'lit-html';
-import goForm from './form';
+import { html } from "lit-html";
+import goForm from "./form";
 
 const popUp = config =>
-    html`
+    html `
     <div id="${config.nameSpace}" class="${config.nameSpace}__bg">
         <article class="${config.nameSpace}">
             <header class="${config.nameSpace}__header">

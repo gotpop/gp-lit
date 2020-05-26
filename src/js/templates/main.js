@@ -7,8 +7,8 @@ import goHeader from "./header";
 import goMatrix from "./matrix";
 
 // Template
-const main = (config) =>
-  html`
+const main = ( config ) =>
+    html `
     <main class="main">
         <div class="main__inner matrix">
           ${goMatrix(config)}

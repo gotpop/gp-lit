@@ -3,14 +3,14 @@ import { html } from "lit-html";
 import goIntro from "./matrixIntroContent";
 
 // Logic
-function getUserMessage(boxItem) {
-  const center = boxItem.id === 9;
-  if (center) return `square--center`;
+function getUserMessage( boxItem ) {
+    const center = boxItem.id === 9;
+    if( center ) return "square--center";
 }
 
 // Template
 const box = boxItem =>
-  html`
+    html `
     <div class="square ${getUserMessage(boxItem)}">
       <div class="square__face square__face--front">
         ${boxItem.id === 9 ? html`${goIntro}` : html``}

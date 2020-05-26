@@ -1,5 +1,4 @@
 // Section data
-
 const cards = [ {
         title: "Section 1",
         text: "Some text content goes here",

@@ -2,8 +2,8 @@
 import { html } from "lit-html";
 
 // Template
-const sectionItem = (item) =>
-  html`
+const sectionItem = ( item ) =>
+    html `
     <section id="${item.id}" class="section">
       <div class="section__inner">
         <div class="scene">

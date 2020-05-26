@@ -3,8 +3,8 @@ import { html } from "lit-html";
 import goLogo from "./logo";
 
 // Template
-const intro = 
-  html`
+const intro =
+    html `
     <section class="main__intro">
       ${goLogo}
       <p>Web development</p>

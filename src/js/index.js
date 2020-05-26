@@ -1,17 +1,17 @@
 // Import
 import { render } from "lit-html";
 import site from "./templates/site";
-import modal from "./modal";
+import modal from "./modules/modal";
 import config from "./data/config";
-import goSections from "./sections";
-import goMatrix from "./matrix";
-import goCards from "./cards";
+import goSections from "./modules/sections";
+import goMatrix from "./modules/matrix";
+import goCards from "./modules/cards";
 
-render(site(config), document.body);
+render( site( config ), document.body );
 
-document.addEventListener("DOMContentLoaded", () => {
-  const goModal = new modal(config.btn.class, config.nameSpace);
-  new goSections();
-  new goMatrix();
-  new goCards();
-});
+document.addEventListener( "DOMContentLoaded", ( ) => {
+    const goModal = new modal( config.btn.class, config.nameSpace );
+    new goSections( );
+    new goMatrix( );
+    new goCards( );
+} );

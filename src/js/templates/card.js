@@ -2,8 +2,8 @@
 import { html } from "lit-html";
 
 // Template
-const card = (cardItem) =>
-  html`
+const card = ( cardItem ) =>
+    html `
     <article class="card">
       <figure class="card__figure">
         <img
@@ -18,9 +18,7 @@ const card = (cardItem) =>
       <div class="card__content">
         <h3 class="card__title">${cardItem.title}</h3>
         <p class="card__text">${cardItem.text}</p>
-        <a class="card__link" href="${cardItem.link.url}"
-          >${cardItem.link.text}</a
-        >
+        <a class="card__link" href="${cardItem.link.url}">${cardItem.link.text}</a>
       </div>
     </article>
   `;

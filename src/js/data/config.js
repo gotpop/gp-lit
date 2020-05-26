@@ -1,3 +1,4 @@
+// Config
 const config = {
     nameSpace: "pop",
     btn: {

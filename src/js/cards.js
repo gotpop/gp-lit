@@ -57,7 +57,6 @@ export default class Cards {
   }
 
   show(item, isEvenNumber) {
-    console.log('isEvenNumber :', isEvenNumber);
     isEvenNumber ? item.animate(this.css.animateInEven, this.options) :
       item.animate(this.css.animateInOdd, this.options);
   }

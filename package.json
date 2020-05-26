@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.1.0",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "sass": "^1.26.5"
   }

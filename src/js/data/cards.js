@@ -27,7 +27,7 @@ const cards = [
     },
     image: {
       title: "Image title",
-      src: "./pebbles.jpg",
+      src: "pebbles.jpg",
       width: "200",
       height: "200",
     },
@@ -44,7 +44,7 @@ const cards = [
     },
     image: {
       title: "Image title",
-      src: "./pebbles.jpg",
+      src: "pebbles.jpg",
       width: "200",
       height: "200",
     },
@@ -61,7 +61,7 @@ const cards = [
     },
     image: {
       title: "Image title",
-      src: "./pebbles.jpg",
+      src: "pebbles.jpg",
       width: "200",
       height: "200",
     },
@@ -95,7 +95,7 @@ const cards = [
     },
     image: {
       title: "Image title",
-      src: "./pebbles.jpg",
+      src: "pebbles.jpg",
       width: "200",
       height: "200",
     },
@@ -112,7 +112,7 @@ const cards = [
     },
     image: {
       title: "Image title",
-      src: "./pebbles.jpg",
+      src: "pebbles.jpg",
       width: "200",
       height: "200",
     },

@@ -1,120 +1,82 @@
 // Cards
 export default class Cards {
-    constructor() {
-      this.html = {};
-      this.currentClass = "";
-      this.init();
-    }
-  
-    init() {
-      this.observe();
-      // this.html.allCards.forEach(item => this.hoverAnimation(item));
-    }
-    
-    show(item, isEvenNumber) {
-      let animateIn = []
-
-      if (isEvenNumber) {
-        animateIn = [
-          { transform: "rotateY(-30deg) translateX(-22vw)" }, 
-          { transform: "rotateY(0deg) translateZ(0)" }
-        ];
-
-      } else {
-        animateIn = [
-          { transform: "rotateY(30deg) translateX(22vw)" }, 
-          { transform: "rotateY(0deg) translateZ(0)" }
-        ];
+  constructor() {
+    this.html = {};
+    this.currentClass = "";
+    this.options = {
+      fill: "forwards",
+      duration: 400,
+      iterations: 1,
+    };
+    this.animateInEven = [{
+        transform: "rotateY(-30deg) translateX(-22vw)",
+        opacity: "0"
+      },
+      {
+        transform: "rotateY(0deg) translateZ(0)",
+        opacity: "1"
       }
-
-      const options = {
-        fill: "forwards",
-        duration: 400,
-        iterations: 1,
-      };
-      
-      item.animate(animateIn, options);
-    }
-
-    hide(item, isEvenNumber) {
-      let animateIn = []
-
-      if (isEvenNumber) {
-        animateIn = [
-          { transform: "rotateY(0deg) translateZ(0)" },
-          { transform: "rotateY(-30deg) translateX(-22vw)" }
-        ];
-
-      } else {
-        animateIn = [
-          { transform: "rotateY(0deg) translateZ(0)" },
-          { transform: "rotateY(30deg) translateX(22vw)" }
-        ];
+    ];
+    this.animateInOdd = [{
+        transform: "rotateY(30deg) translateX(22vw)",
+        opacity: "0"
+      },
+      {
+        transform: "rotateY(0deg) translateZ(0)",
+        opacity: "1"
       }
-      
-      const options = {
-        fill: "forwards",
-        duration: 400,
-        iterations: 1,
-      };
-      
-      item.animate(animateIn, options);
-    }
-    
-    observe() {
-      this.html.allCards = [...document.querySelectorAll(".cards__main .card")];
-        const options = { threshold: 0.5 };
-
-        const cb = entries => {
-
-
-// const stuff = () => {
-  
-// }
-
-          entries.forEach((entry, i) => {
-
-            const isEvenNumber = ( (i & 1) == 0 );
-            isEvenNumber ? console.log('odd :', i, isEvenNumber)  : console.log('even :', i, isEvenNumber);
-
-            const isVisible = (entry.intersectionRatio > 0.5);
-
-            isVisible ? this.show(entry.target, isEvenNumber) : this.hide(entry.target, isEvenNumber);
-          });
-
-
-        };
-    
-        const observer = new IntersectionObserver(cb, options);
-    
-        this.html.allCards.forEach((card) => {
-          observer.observe(card);
-        });
+    ];
+    this.animateOutEven = [{
+        transform: "rotateY(0deg) translateZ(0)",
+        opacity: "1"
+      },
+      {
+        transform: "rotateY(-30deg) translateX(-22vw)",
+        opacity: "0"
       }
+    ];
+    this.animateOutOdd = [{
+        transform: "rotateY(0deg) translateZ(0)",
+        opacity: "1"
+      },
+      {
+        transform: "rotateY(30deg) translateX(22vw)",
+        opacity: "0"
 
-      hoverAnimation = item => {
-        const animateIn = [
-          { transform: "rotateY(0)" }, 
-          { transform: "rotateY(180deg) translateZ(22vw)" }
-        ];
-    
-        const animateOut = [
-          { transform: "rotateY(180deg) translateZ(22vw)" },
-          { transform: "rotateY(0) translateZ(0vw)" }
-        ];
-    
-        const options = {
-          fill: "forwards",
-          duration: 400,
-          iterations: 1,
-        };
-    
-        item.addEventListener("mouseenter", event => {
-          item.animate(animateIn, options );
-        });
-        
-        item.addEventListener("mouseleave", event => {
-          item.animate( animateOut, options);
-        });
-      };
+      }
+    ];
+    this.observe();
   }
+
+  show(item, isEvenNumber) {
+  console.log('isEvenNumber :', isEvenNumber);
+    isEvenNumber ? item.animate(this.animateInEven, this.options) : item.animate(this.animateInOdd, this.options);
+  }
+
+  hide(item, isEvenNumber) {
+    isEvenNumber ? item.animate(this.animateOutEven, this.options) : item.animate(this.animateOutOdd, this.options);
+  }
+
+  observe() {
+    this.html.allCards = [...document.querySelectorAll(".cards__main .card")];
+    const options = {
+      threshold: 0.5
+    };
+
+    const cb = entries => {
+      entries.forEach((entry, i) => {
+        const isEvenNumber = ((i & 1) == 0);
+        const isVisible = (entry.intersectionRatio > 0.5);
+
+        // isEvenNumber ? console.log('odd :', i, isEvenNumber) : console.log('even :', i, isEvenNumber);
+        isVisible ? this.show(entry.target, isEvenNumber) : this.hide(entry.target, isEvenNumber);
+      });
+    };
+
+    const observer = new IntersectionObserver(cb, options);
+
+    this.html.allCards.forEach((card) => {
+      observer.observe(card);
+    });
+  }
+}

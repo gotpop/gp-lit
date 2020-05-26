@@ -54,7 +54,7 @@ export default class ModalLimits {
     handleClose = event => {
         event.preventDefault( );
         this.handleState( false );
-    }
+    };
 
     submitButtonDisabled( ) {
         const valid = this.html.form.checkValidity( );

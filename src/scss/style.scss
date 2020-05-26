@@ -1,31 +1,7 @@
-// Vars
+// Import directory modules
+
 @use "vars";
-
-// Global Mixins
-@use "mixins/grid";
-@use "mixins/media-queries";
-
-// Global
-@use "global/reset";
-@use "global/global";
-@use "global/animation";
-@use "global/layout";
-@use "global/fonts";
-@use "global/typography";
-
-// Blocks
-@use "blocks/header";
-@use "blocks/main";
-@use "blocks/footer";
-@use "blocks/modal";
-@use "blocks/sections";
-@use "blocks/social";
-
-// Elements
-@use "elements/cards";
-@use "elements/icons";
-@use "elements/cube";
-@use "elements/button";
-@use "elements/boxes";
-@use "elements/logo";
-@use "elements/matrix";
+@use "mixins";
+@use "global";
+@use "blocks";
+@use "elements";

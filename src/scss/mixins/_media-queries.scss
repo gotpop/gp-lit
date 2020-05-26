@@ -2,49 +2,49 @@
 @use "vars";
 
 @mixin phone {
-    @media screen and (max-width: #{$desktop-width - 1px}) {
+    @media screen and (max-width: #{vars.$desktop-width - 1px}) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @media screen and (min-width: #{vars.$tablet-width}) and (max-width: #{vars.$desktop-width - 1px}) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media screen and (min-width: #{$desktop-width}) {
+    @media screen and (min-width: #{vars.$desktop-width}) {
         @content;
     }
 }
 
 @mixin phone-and-tablet-portrait {
-    @media screen and (max-width: #{$desktop-width - 1px}) {
+    @media screen and (max-width: #{vars.$desktop-width - 1px}) {
         @content;
     }
 }
 
 @mixin not-phone-or-tablet-portrait {
-    @media screen and (min-width: #{$desktop-width}) {
+    @media screen and (min-width: #{vars.$desktop-width}) {
         @content;
     }
 }
 
 @mixin not-phone {
-    @media screen and (min-width: #{$tablet-width}) {
+    @media screen and (min-width: #{vars.$tablet-width}) {
         @content;
     }
 }
 
 @mixin not-tablet {
-    @media screen and (max-width: #{$tablet-width}),screen and (min-width: #{$desktop-width}) {
+    @media screen and (max-width: #{vars.$tablet-width}),screen and (min-width: #{vars.$desktop-width}) {
         @content;
     }
 }
 
 @mixin not-desktop {
-    @media screen and (max-width: #{$desktop-width - 1px}) {
+    @media screen and (max-width: #{vars.$desktop-width - 1px}) {
         @content;
     }
 }
@@ -62,13 +62,13 @@
 }
 
 @mixin phone-orientation-portrait {
-    @media screen and (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) and (orientation:portrait) {
+    @media screen and (min-width: #{vars.$phone-width}) and (max-width: #{vars.$tablet-width - 1px}) and (orientation:portrait) {
         @content;
     }
 }
 
 @mixin phone-orientation-landscape {
-    @media screen and (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) and (orientation:landscape) {
+    @media screen and (min-width: #{vars.$phone-width}) and (max-width: #{vars.$tablet-width - 1px}) and (orientation:landscape) {
         @content;
     }
 }

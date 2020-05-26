@@ -1,15 +1,16 @@
 // Typography
 @use "vars";
+@use "mixins";
 
 html {
     font-family: var(--body-regular);
     font-size: 14px;
 
-    @media (min-width: vars.$small-up) {
+    @include mixins.tablet {
         font-size: 2vw;
     }
 
-    @media (min-width: vars.$medium-up) {
+    @include mixins.desktop {
         font-size: 1rem;
     }
 }

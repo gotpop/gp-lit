@@ -1,12 +1,12 @@
 // Sections
 .section {
     background-color: var(--primary-color);
-    background-color: lightgrey;
+    background-color: #fff;
     display: grid;
     grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
     grid-template-rows: minmax(600px, max-content);
     grid-template-areas: ". middle .";
-    padding: 4rem 0px;
+    padding: 3rem 0px;
 
     &__inner {
         display: grid;
@@ -20,7 +20,7 @@
         padding: 2rem;
         position: absolute;
         background: rgba(0, 0, 0, 0.4);
-        margin: 2rem;
+        margin: 6rem;
     }
 
     &__title {
@@ -43,5 +43,6 @@
         width: 100%;
         height: 565px;
         object-fit: cover;
+        display: none;
     }
 }

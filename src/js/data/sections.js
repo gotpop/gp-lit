@@ -43,36 +43,6 @@ const sections = [ {
         button: {
             title: "Button title"
         }
-    },
-    {
-        title: "Our work",
-        text: "Some text content goes here",
-        link: "www.gotpop.net",
-        id: "work",
-        image: {
-            title: "Image title",
-            src: "./city.jpg",
-            width: "1000",
-            height: "667"
-        },
-        button: {
-            title: "Button title"
-        }
-    },
-    {
-        title: "News updates",
-        text: "Some text content goes here",
-        link: "www.gotpop.net",
-        id: "news",
-        image: {
-            title: "Image title",
-            src: "./walk.jpg",
-            width: "1000",
-            height: "750"
-        },
-        button: {
-            title: "Button title"
-        }
     }
 ];
 

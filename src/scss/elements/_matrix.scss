@@ -25,7 +25,6 @@
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.4s;
-    will-change: transform;
 
     &.square--center {
         grid-column: span 2;

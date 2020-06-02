@@ -1,13 +1,31 @@
 // Cards
 .cards {
-    background-color: white;
+    background-color: #eee;
     grid-template-areas: ". cards .";
     grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
     display: grid;
+    overflow: hidden;
+    perspective: 600px;
+
+    &::before,
+    &::after {
+        content: '';
+        display: flex;
+        width: 300px;
+        height: 100%;
+        background-color: #fff;
+        transform: rotateY(45deg);
+        top: 0;
+    }
+    
+    &::after {
+        transform: rotateY(-45deg);
+        right: 0;
+    }
 
     &__main {
         grid-area: cards;
-        padding: 4rem 1rem;
+        padding: 6rem 1rem;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr 1fr 1fr;
@@ -16,6 +34,7 @@
         transform-style: preserve-3d;
         transition: all 0.4s ease;
         perspective-origin: 50% 50%;
+        z-index: 1;
     }
 }
 

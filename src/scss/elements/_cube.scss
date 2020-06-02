@@ -4,15 +4,16 @@ $depth: 10vw;
 $goRow: 566px;
 
 .scene {
-  perspective: 8rem;
+  perspective: 10vw;
   perspective-origin: inherit;
   grid-column: span 12;
   display: grid;
   transition: all 1.5s ease-in;
+  transition-delay: .5s;
   will-change: perspective;
   
   .section--visible & {
-      perspective: 520rem;
+      perspective: 100vw;
   }
 }
 

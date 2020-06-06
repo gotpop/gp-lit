@@ -6,6 +6,7 @@
     display: grid;
     overflow: hidden;
     perspective: 600px;
+    position: relative;
 
     &::before,
     &::after {
@@ -16,6 +17,7 @@
         background-color: #fff;
         transform: rotateY(45deg);
         top: 0;
+        position: absolute;
     }
     
     &::after {
@@ -45,6 +47,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    transform-origin: left;
+    
+    &:nth-child(even) {
+        transform-origin: right;
+    }
 
     &__img {
         width: 100%;

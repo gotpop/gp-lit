@@ -64,27 +64,28 @@ export default class Cards {
   }
 
   goAnimate = (cssAnimation, element) => {
+    const get = entry.target.getAnimations();
+    const AnimationExists = (get.length > 0);
+
     element.animate(cssAnimation, this.options);
   };
 
-  visibleActions = (isEvenNumber, AnimationExists, element) => {
+  animateIn = (isEvenNumber, element) => {
     isEvenNumber ? this.goAnimate(this.css.animateInEven, element) 
                  : this.goAnimate(this.css.animateInOdd, element);
   }
 
-  hiddenActions = (isEvenNumber, AnimationExists, element) => {
+  animateOut = (isEvenNumber, element) => {
     isEvenNumber ? this.goAnimate(this.css.animateOutEven, element) 
                  : this.goAnimate(this.css.animateOutOdd, element);
   }
  
   callbackActions = (entry, i) => {
     const isVisible = (entry.intersectionRatio > 0.5);
-    const get = entry.target.getAnimations();
-    const AnimationExists = (get.length > 0);
     const isEvenNumber = ((i & 1) == 0);
 
-    isVisible ? this.visibleActions(isEvenNumber, AnimationExists, entry.target) 
-              : this.hiddenActions(isEvenNumber, AnimationExists, entry.target);
+    isVisible ? this.animateIn(isEvenNumber, entry.target) 
+              : this.animateOut(isEvenNumber, entry.target);
   };
 
   observerCallback = entries => {

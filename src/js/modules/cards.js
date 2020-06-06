@@ -63,18 +63,6 @@ export default class Cards {
     ];
   }
 
-  //   show(item, isEvenNumber) {
-  //     isEvenNumber
-  //       ? item.animate(this.css.animateInEven, this.options)
-  //       : item.animate(this.css.animateInOdd, this.options);
-  //   }
-
-  //   hide(item, isEvenNumber) {
-  //     isEvenNumber
-  //       ? item.animate(this.css.animateOutEven, this.options)
-  //       : item.animate(this.css.animateOutOdd, this.options);
-  //   }
-
   observe() {
     const options = {
       threshold: 0.5,
@@ -82,53 +70,30 @@ export default class Cards {
 
     const cb = (entries) => {
       entries.forEach((entry, i) => {
-        const isEvenNumber = (i & 1) == 0;
-        const isVisible = entry.intersectionRatio > 0.5;
+        const isVisible = (entry.intersectionRatio > 0.5);
         const get = entry.target.getAnimations();
+        const AnimationExists = (get.length > 0);
+        const isEvenNumber = ((i & 1) == 0);
+        console.log("AnimationExists :", AnimationExists);
 
-        if (isVisible) {
-          if (isEvenNumber) {
-            if (get.length > 0) {
-              console.log("get :", get);
-              const state = get[0].playState;
+        const visibleActions = (isEvenNumber, AnimationExists) => {
 
-              if (state !== "running") {
-                entry.target.animate(this.css.animateInEven, this.options);
-              }
-            } else {
-              entry.target.animate(this.css.animateInEven, this.options);
-            }
-          } else {
-            if (get.length > 0) {
-              const state = get[0].playState;
-              if (state !== "running") {
-                entry.target.animate(this.css.animateInOdd, this.options);
-              }
-            } else {
-              entry.target.animate(this.css.animateInOdd, this.options);
-            }
-          }
-        } else {
-          if (isEvenNumber) {
-            if (get.length > 0) {
-              const state = get[0].playState;
-              if (state !== "running") {
-                entry.target.animate(this.css.animateOutEven, this.options);
-              }
-            } else {
-              entry.target.animate(this.css.animateOutEven, this.options);
-            }
-          } else {
-            if (get.length > 0) {
-              const state = get[0].playState;
-              if (state !== "running") {
-                entry.target.animate(this.css.animateOutOdd, this.options);
-              }
-            } else {
-              entry.target.animate(this.css.animateOutOdd, this.options);
-            }
-          }
+          const goAnimate = (cssAnimation) => {
+            entry.target.animate(cssAnimation, this.options);
+          };
+
+          isEvenNumber ? goAnimate(this.css.animateInEven) : goAnimate(this.css.animateInOdd);
         }
+
+        const hiddenActions = (isEvenNumber) => {
+          const goAnimate = (cssAnimation) => {
+            entry.target.animate(cssAnimation, this.options);
+          };
+
+          isEvenNumber ? goAnimate(this.css.animateOutEven) : goAnimate(this.css.animateOutOdd);
+        }
+
+        isVisible ? visibleActions(isEvenNumber, AnimationExists) : hiddenActions(isEvenNumber, AnimationExists);
       });
     };
 

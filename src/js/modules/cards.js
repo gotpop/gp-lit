@@ -14,7 +14,7 @@ export default class Cards {
   init() {
     this.html.allCards = [...document.querySelectorAll(".cards__main .card")];
     this.animations();
-    this.observe();
+    this.observeCards();
   }
 
   animations() {
@@ -63,41 +63,36 @@ export default class Cards {
     ];
   }
 
-  observe() {
-    const options = {
-      threshold: 0.5,
-    };
+  goAnimate = (cssAnimation, element) => {
+    element.animate(cssAnimation, this.options);
+  };
 
-    const cb = (entries) => {
-      entries.forEach((entry, i) => {
-        const isVisible = (entry.intersectionRatio > 0.5);
-        const get = entry.target.getAnimations();
-        const AnimationExists = (get.length > 0);
-        const isEvenNumber = ((i & 1) == 0);
-        console.log("AnimationExists :", AnimationExists);
+  visibleActions = (isEvenNumber, AnimationExists, element) => {
+    isEvenNumber ? this.goAnimate(this.css.animateInEven, element) 
+                 : this.goAnimate(this.css.animateInOdd, element);
+  }
 
-        const visibleActions = (isEvenNumber, AnimationExists) => {
+  hiddenActions = (isEvenNumber, AnimationExists, element) => {
+    isEvenNumber ? this.goAnimate(this.css.animateOutEven, element) 
+                 : this.goAnimate(this.css.animateOutOdd, element);
+  }
+ 
+  callbackActions = (entry, i) => {
+    const isVisible = (entry.intersectionRatio > 0.5);
+    const get = entry.target.getAnimations();
+    const AnimationExists = (get.length > 0);
+    const isEvenNumber = ((i & 1) == 0);
 
-          const goAnimate = (cssAnimation) => {
-            entry.target.animate(cssAnimation, this.options);
-          };
+    isVisible ? this.visibleActions(isEvenNumber, AnimationExists, entry.target) 
+              : this.hiddenActions(isEvenNumber, AnimationExists, entry.target);
+  };
 
-          isEvenNumber ? goAnimate(this.css.animateInEven) : goAnimate(this.css.animateInOdd);
-        }
+  observerCallback = entries => {
+    entries.forEach((entry, i) => this.callbackActions(entry, i));
+  };
 
-        const hiddenActions = (isEvenNumber) => {
-          const goAnimate = (cssAnimation) => {
-            entry.target.animate(cssAnimation, this.options);
-          };
-
-          isEvenNumber ? goAnimate(this.css.animateOutEven) : goAnimate(this.css.animateOutOdd);
-        }
-
-        isVisible ? visibleActions(isEvenNumber, AnimationExists) : hiddenActions(isEvenNumber, AnimationExists);
-      });
-    };
-
-    const observer = new IntersectionObserver(cb, options);
+  observeCards() {
+    const observer = new IntersectionObserver(this.observerCallback, { threshold: 0.5 });
 
     this.html.allCards.forEach((card) => {
       observer.observe(card);

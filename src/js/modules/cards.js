@@ -4,9 +4,8 @@ export default class Cards {
     this.html = {};
     this.css = {};
     this.options = {
-      fill: "forwards",
-      duration: 400,
-      iterations: 1,
+      fill: "both",
+      duration: 400
     };
     this.init();
   }
@@ -53,19 +52,23 @@ export default class Cards {
     const animationExists = (get.length > 0);
     let css;
     
-    if (isEvenNumber) {
-      css = this.css.animateEven
-    } else {
-      css = this.css.animateOdd
-    }
+    isEvenNumber ? css = this.css.animateEven : css = this.css.animateOdd;
+    
+    const goPlay = () => {
+      const  goAnimate = entry.target.animate(css, this.options)
+  
+      // goAnimate.pause();
+      goAnimate.play();
+    };
 
-    const  goAnimate = entry.target.animate(css, this.options)
+    const goReverse = () => {
+      const  goAnimate = entry.target.animate(css, this.options)
+  
+      // goAnimate.pause();
+      goAnimate.reverse();
+    };
 
-    goAnimate.pause();
-
-    isEntering ? goAnimate.play() : goAnimate.reverse();
-
-
+    isEntering ? goPlay() : goReverse();
   };
 
   callbackActions = (entry, i) => {

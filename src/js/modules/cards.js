@@ -56,15 +56,11 @@ export default class Cards {
     
     const goPlay = () => {
       const  goAnimate = entry.target.animate(css, this.options)
-  
-      // goAnimate.pause();
       goAnimate.play();
     };
 
     const goReverse = () => {
       const  goAnimate = entry.target.animate(css, this.options)
-  
-      // goAnimate.pause();
       goAnimate.reverse();
     };
 

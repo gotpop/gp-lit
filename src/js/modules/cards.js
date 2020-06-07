@@ -21,71 +21,59 @@ export default class Cards {
     const value1 = "30deg";
     const value2 = "22vw";
 
-    this.css.animateInEven = [
+    this.css.animateEven = [
       {
         transform: `rotateY(-${value1}) translateX(-${value2})`,
         opacity: "0",
+        border: "5px solid red"
       },
       {
         transform: "rotateY(0deg) translateZ(0)",
-        opacity: "1",
+        border: "5px solid red",
+        opacity: "1"
       },
     ];
-    this.css.animateInOdd = [
+
+    this.css.animateOdd = [
       {
         transform: `rotateY(${value1}) translateX(${value2})`,
         opacity: "0",
+        border: "5px solid green"
       },
       {
         transform: "rotateY(0deg) translateZ(0)",
         opacity: "1",
-      },
-    ];
-    this.css.animateOutEven = [
-      {
-        transform: "rotateY(0deg) translateZ(0)",
-        opacity: "1",
-      },
-      {
-        transform: `rotateY(-${value1}) translateX(-${value2})`,
-        opacity: "0",
-      },
-    ];
-    this.css.animateOutOdd = [
-      {
-        transform: "rotateY(0deg) translateZ(0)",
-        opacity: "1",
-      },
-      {
-        transform: `rotateY(${value1}) translateX(${value2})`,
-        opacity: "0",
+        border: "5px solid green"
       },
     ];
   }
 
-  goAnimate = (cssAnimation, element) => {
+  goAnimate = (entry, isEvenNumber, isEntering) => {
     const get = entry.target.getAnimations();
-    const AnimationExists = (get.length > 0);
+    const animationExists = (get.length > 0);
+    let css;
+    
+    if (isEvenNumber) {
+      css = this.css.animateEven
+    } else {
+      css = this.css.animateOdd
+    }
 
-    element.animate(cssAnimation, this.options);
+    const  goAnimate = entry.target.animate(css, this.options)
+
+    goAnimate.pause();
+
+    isEntering ? goAnimate.play() : goAnimate.reverse();
+
+
   };
 
-  animateIn = (isEvenNumber, element) => {
-    isEvenNumber ? this.goAnimate(this.css.animateInEven, element) 
-                 : this.goAnimate(this.css.animateInOdd, element);
-  }
-
-  animateOut = (isEvenNumber, element) => {
-    isEvenNumber ? this.goAnimate(this.css.animateOutEven, element) 
-                 : this.goAnimate(this.css.animateOutOdd, element);
-  }
- 
   callbackActions = (entry, i) => {
     const isVisible = (entry.intersectionRatio > 0.5);
     const isEvenNumber = ((i & 1) == 0);
 
-    isVisible ? this.animateIn(isEvenNumber, entry.target) 
-              : this.animateOut(isEvenNumber, entry.target);
+    isVisible ? this.goAnimate(entry, isEvenNumber, true)
+      : this.goAnimate(entry, isEvenNumber, false);
   };
 
   observerCallback = entries => {

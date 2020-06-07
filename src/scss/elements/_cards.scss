@@ -43,15 +43,9 @@
 .card {
     background-color: rgb(232, 232, 232);
     grid-column: span 6;
-    // transform: rotateY(90deg) translateZ(22vw);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    // transform-origin: left;
-    
-    // &:nth-child(even) {
-    //     transform-origin: right;
-    // }
 
     &__img {
         width: 100%;

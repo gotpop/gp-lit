@@ -49,33 +49,23 @@ export default class Cards {
 
   goAnimate = (entry, isEntering, isEvenNumber) => {
     const id = entry.target.getAttribute("data-id");
+    const cardKeyframes = new KeyframeEffect(
+      entry.target,
+      this.keyframes(isEvenNumber),
+      this.options
+    );
+    const goAnimate = new Animation(cardKeyframes, document.timeline);
 
     const goPlay = () => {
-      const goAnimate = entry.target.animate(
-        this.keyframes(isEvenNumber),
-        this.options
-      );
-
-      goAnimate.id = `go-${id}`;
       this.entries[`go-${id}`] += 1;
-
       goAnimate.play();
     };
 
-    const goReverse = () => {
-      const goAnimate = entry.target.animate(
-        this.keyframes(isEvenNumber),
-        this.options
-      );
-
-      goAnimate.reverse();
-    };
-
     if (this.entries[`go-${id}`] < 1) {
-      isEntering ? goPlay() : goReverse();
-    } 
+      isEntering ? goPlay() : goAnimate.reverse();
+    }
 
-    window.addEventListener("scroll", (e) => {
+    window.addEventListener("scroll", () => {
       this.entries[`go-${id}`] = 0;
     });
   };
@@ -83,20 +73,15 @@ export default class Cards {
   callbackActions = (entry, i) => {
     const isEntering = entry.intersectionRatio > 0.8;
     const isEvenNumber = (i & 1) == 0;
-
     const get = entry.target.getAnimations();
-    const animationExists = get.length > 0;
+    const thereAreNoAnimations = (get.length = 0);
 
-    if (!animationExists) {
+    if (thereAreNoAnimations) {
       this.goAnimate(entry, isEntering, isEvenNumber);
     } else {
       Promise.all(
-        entry.target.getAnimations().map((animation) => {
-          return animation.finished;
-        })
-      ).then(() => {
-        this.goAnimate(entry, isEntering, isEvenNumber);
-      });
+        entry.target.getAnimations().map((animation) => animation.finished)
+      ).then(() => this.goAnimate(entry, isEntering, isEvenNumber));
     }
   };
 
@@ -110,8 +95,6 @@ export default class Cards {
       threshold: 0.8,
     });
 
-    allCards.forEach((card) => {
-      observer.observe(card);
-    });
+    allCards.forEach((card) => observer.observe(card));
   }
 }

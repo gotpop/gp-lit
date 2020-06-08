@@ -1,16 +1,15 @@
 // Cards
 export default class Cards {
   constructor() {
-    this.html = {};
     this.entries = {
-        'go-1': 0, 
-        'go-2': 0, 
-        'go-3': 0, 
-        'go-4': 0, 
-        'go-5': 0, 
-        'go-6': 0, 
-        'go-7': 0, 
-        'go-8': 0, 
+      "go-1": 0,
+      "go-2": 0,
+      "go-3": 0,
+      "go-4": 0,
+      "go-5": 0,
+      "go-6": 0,
+      "go-7": 0,
+      "go-8": 0,
     };
     this.options = {
       fill: "both",
@@ -50,40 +49,35 @@ export default class Cards {
 
   goAnimate = (entry, isEntering, isEvenNumber) => {
     const id = entry.target.getAttribute("data-id");
-    // goAnimate.id = `go-${id}`;
-
-
 
     const goPlay = () => {
-      //   console.log('goPlay');
       const goAnimate = entry.target.animate(
         this.keyframes(isEvenNumber),
         this.options
       );
 
-    //   this.entries[`go-${id}`] = 0;
-      console.log(this);
+      goAnimate.id = `go-${id}`;
+      this.entries[`go-${id}`] += 1;
 
       goAnimate.play();
     };
 
     const goReverse = () => {
-      const id = entry.target.getAttribute("data-id");
-      //   console.log('goReverse');
       const goAnimate = entry.target.animate(
         this.keyframes(isEvenNumber),
         this.options
       );
-      goAnimate.id = `go-${id}`;
-      this.entries[`go-${id}`] += 1;
-      console.log('reverse', this);
+
       goAnimate.reverse();
     };
 
-    if (this.entries[`go-${id}`] < 4) {
-        isEntering ? goPlay() : goReverse();
-    }
+    if (this.entries[`go-${id}`] < 1) {
+      isEntering ? goPlay() : goReverse();
+    } 
 
+    window.addEventListener("scroll", (e) => {
+      this.entries[`go-${id}`] = 0;
+    });
   };
 
   callbackActions = (entry, i) => {
@@ -98,8 +92,6 @@ export default class Cards {
     } else {
       Promise.all(
         entry.target.getAnimations().map((animation) => {
-          console.log("animation :", animation);
-
           return animation.finished;
         })
       ).then(() => {
@@ -109,13 +101,10 @@ export default class Cards {
   };
 
   observerCallback = (entries) => {
-    // console.log('observerCallback', entries);
     entries.forEach((entry, i) => this.callbackActions(entry, i));
   };
 
   observeCards() {
-    // console.log('observeCards');
-
     const allCards = [...document.querySelectorAll(".cards__main .card")];
     const observer = new IntersectionObserver(this.observerCallback, {
       threshold: 0.8,

@@ -4,7 +4,7 @@ import { html } from "lit-html";
 // Template
 const card = ( cardItem ) =>
     html `
-    <article class="card">
+    <article class="card" data-id="${cardItem.id}">
       <figure class="card__figure">
         <img
           class="card__img"

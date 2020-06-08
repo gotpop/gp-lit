@@ -2,7 +2,6 @@
 export default class Cards {
   constructor() {
     this.html = {};
-    this.css = {};
     this.options = {
       fill: "both",
       duration: 400
@@ -11,68 +10,79 @@ export default class Cards {
   }
 
   init() {
-    this.html.allCards = [...document.querySelectorAll(".cards__main .card")];
-    this.animations();
     this.observeCards();
   }
 
-  animations() {
-    const value1 = "30deg";
-    const value2 = "22vw";
+  keyframes(isEvenNumber) {
+    const rotation = "30deg";
+    const translate = "22vw";
+    let minus;
+    let border;
 
-    this.css.animateEven = [
+    isEvenNumber ? minus = "-" : minus = "";
+    isEvenNumber ? border = "red" : border = "green";
+
+    const goKeyframes = [
       {
-        transform: `rotateY(-${value1}) translateX(-${value2})`,
+        transform: `rotateY(${minus}${rotation}) translateX(${minus}${translate})`,
         opacity: "0",
-        border: "5px solid red"
+        border: `5px solid ${border}`
       },
       {
         transform: "rotateY(0deg) translateZ(0)",
-        border: "5px solid red",
+        border: `5px solid ${border}`,
         opacity: "1"
-      },
+      }
     ];
 
-    this.css.animateOdd = [
-      {
-        transform: `rotateY(${value1}) translateX(${value2})`,
-        opacity: "0",
-        border: "5px solid green"
-      },
-      {
-        transform: "rotateY(0deg) translateZ(0)",
-        opacity: "1",
-        border: "5px solid green"
-      },
-    ];
+    return goKeyframes;
   }
 
-  goAnimate = (entry, isEvenNumber, isEntering) => {
-    const get = entry.target.getAnimations();
-    const animationExists = (get.length > 0);
-    let css;
-    
-    isEvenNumber ? css = this.css.animateEven : css = this.css.animateOdd;
-    
+  goAnimate = (entry, isEntering, isEvenNumber) => {
+
+
     const goPlay = () => {
-      const  goAnimate = entry.target.animate(css, this.options)
+      console.log('goPlay');
+      const goAnimate = entry.target.animate(this.keyframes(isEvenNumber), this.options);
       goAnimate.play();
     };
 
     const goReverse = () => {
-      const  goAnimate = entry.target.animate(css, this.options)
+      console.log('goReverse');
+      const goAnimate = entry.target.animate(this.keyframes(isEvenNumber), this.options);
       goAnimate.reverse();
+
+      // if (animationExists) {
+      //   if (get[0].playState !== 'running') {
+
+
+
+      //   }
+      // }
     };
 
     isEntering ? goPlay() : goReverse();
   };
 
   callbackActions = (entry, i) => {
-    const isVisible = (entry.intersectionRatio > 0.5);
+    const isEntering = (entry.intersectionRatio > 0.8);
     const isEvenNumber = ((i & 1) == 0);
 
-    isVisible ? this.goAnimate(entry, isEvenNumber, true)
-      : this.goAnimate(entry, isEvenNumber, false);
+    const get = entry.target.getAnimations();
+    const animationExists = (get.length > 0);
+
+    if (animationExists) {
+      Promise.all(
+        entry.target.getAnimations()
+          .map(animation => animation.finished)
+      ).then(() => {
+        setTimeout(() => {
+          this.goAnimate(entry, isEntering, isEvenNumber);
+        }, 500);
+      });
+    } else {
+      this.goAnimate(entry, isEntering, isEvenNumber);
+    }
   };
 
   observerCallback = entries => {
@@ -80,9 +90,10 @@ export default class Cards {
   };
 
   observeCards() {
-    const observer = new IntersectionObserver(this.observerCallback, { threshold: 0.5 });
+    const allCards = [...document.querySelectorAll(".cards__main .card")];
+    const observer = new IntersectionObserver(this.observerCallback, { threshold: 0.8 });
 
-    this.html.allCards.forEach((card) => {
+    allCards.forEach((card) => {
       observer.observe(card);
     });
   }

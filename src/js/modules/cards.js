@@ -1,7 +1,7 @@
 // Cards
 export default class Cards {
   constructor() {
-    this.entries = {
+    this.iteration = {
       "go-1": 0,
       "go-2": 0,
       "go-3": 0,
@@ -26,29 +26,24 @@ export default class Cards {
     const rotation = "30deg";
     const translate = "22vw";
     let minus;
-    let border;
 
     isEvenNumber ? (minus = "-") : (minus = "");
-    isEvenNumber ? (border = "red") : (border = "green");
 
     const goKeyframes = [
       {
         transform: `rotateY(${minus}${rotation}) translateX(${minus}${translate})`,
-        opacity: "0",
-        border: `5px solid ${border}`,
+        opacity: "0"
       },
       {
         transform: "rotateY(0deg) translateZ(0)",
-        border: `5px solid ${border}`,
-        opacity: "1",
+        opacity: "1"
       },
     ];
 
     return goKeyframes;
   }
 
-  goAnimate = (entry, isEntering, isEvenNumber) => {
-    const id = entry.target.getAttribute("data-id");
+  makeAnimation(entry, isEvenNumber) {
     const cardKeyframes = new KeyframeEffect(
       entry.target,
       this.keyframes(isEvenNumber),
@@ -56,17 +51,24 @@ export default class Cards {
     );
     const goAnimate = new Animation(cardKeyframes, document.timeline);
 
+    return goAnimate;
+  }
+
+  goAnimate = (entry, isEntering, isEvenNumber) => {
+    const id = entry.target.getAttribute("data-id");
+    const goAnimate = this.makeAnimation(entry, isEvenNumber);
+
     const goPlay = () => {
-      this.entries[`go-${id}`] += 1;
+      this.iteration[`go-${id}`] += 1;
       goAnimate.play();
     };
 
-    if (this.entries[`go-${id}`] < 1) {
+    if (this.iteration[`go-${id}`] < 1) {
       isEntering ? goPlay() : goAnimate.reverse();
     }
 
     window.addEventListener("scroll", () => {
-      this.entries[`go-${id}`] = 0;
+      this.iteration[`go-${id}`] = 0;
     });
   };
 

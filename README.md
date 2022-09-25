@@ -2,4 +2,4 @@
 Using lit-html to template html with JavaScript
 
 ## Live build
-https://gp-lit.now.sh
+https://gp-lit.vercel.app
